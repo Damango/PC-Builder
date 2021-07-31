@@ -1,0 +1,36 @@
+.part-selector-container {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 300px auto;
+}
+
+.left-side-container {
+	position: relative;
+	background-color: purple;
+}
+.part-nav-container {
+	position: relative;
+	background-color: white;
+	width: 200px;
+	height: 500px;
+	padding: 10px;
+}
+
+.part-nav-link {
+	background-color: gray;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.parts-list-container {
+	position: relative;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	padding: 10px;
+	height: 700px;
+	display: flex;
+	flex-wrap: wrap;
+}
