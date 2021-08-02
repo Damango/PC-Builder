@@ -1,0 +1,76 @@
+.part-card-container {
+	position: relative;
+	background-color: white;
+	width: 300px;
+	height: 450px;
+	padding: 15px;
+	box-shadow: 0px 0px 1px 1px rgb(0, 0, 0);
+	border-radius: 5px;
+	margin-right: 50px;
+	margin-bottom: 40px;
+}
+
+.part-name {
+	text-align: center;
+	font-family: "Inter";
+	font-weight: 600;
+	font-size: 19px;
+	color: #2f3640;
+}
+
+.part-image {
+	position: relative;
+	width: 200px;
+	height: 200px;
+
+	background-size: cover;
+	background-image: url("../../media/intelchip.png");
+	background-position: center;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.feature-tags-container {
+	margin-bottom: 20px;
+}
+.feature-tag {
+	display: inline-block;
+	margin-right: 10px;
+	background-color: rgba(219, 219, 219, 0.267);
+	border: 1px solid rgba(0, 0, 0, 0.363);
+	border-radius: 8px;
+	padding: 5px 10px;
+	font-family: "Inter";
+	font-size: 13px;
+}
+
+.part-price {
+	float: left;
+	font-size: 23px;
+}
+
+.part-rating {
+	float: right;
+}
+
+.rating-count {
+	text-align: right;
+}
+
+.select-button {
+	position: absolute;
+	background-color: #1774ff;
+	padding: 6px;
+	width: 90%;
+	border-radius: 5px;
+	bottom: 15px;
+	color: white;
+	border-style: none;
+	font-family: "Maven Pro";
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.fa-star {
+	color: rgb(243, 227, 0);
+}
