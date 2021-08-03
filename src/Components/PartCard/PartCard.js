@@ -1,8 +1,33 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import "./PartCard.css"
 
 const PartCard = (props) => {
-    return ( <div className="part-card-container">
+
+    let cardRef = useRef()
+
+    useEffect(() => {
+
+       
+
+
+        let delay = props.index * 1 + 's'
+        cardRef.current.style.transitionDelay = props.index / 10 + 's'
+
+        console.log(delay)
+
+        cardRef.current.style.opacity = 1
+
+
+    }
+    
+    
+    ,[])
+
+
+
+
+
+    return ( <div className="part-card-container" ref={cardRef}>
     <div className="part-name">{props.data.name}</div>
     <div className="part-image center-x" style={{backgroundImage:`url(${props.data.imageURL})` }}></div>
     <div className="feature-tags-container">

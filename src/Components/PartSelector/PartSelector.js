@@ -71,14 +71,24 @@ const PartSelector = (props) => {
         rating: 5,
         ratingCount: 300
     },]
-    let motherBoardParts = ['motherboard','motherboard','motherboard','motherboard','motherboard','motherboard']
+    let motherBoardParts = ['motherboard','motherboard','motherboard','motherboard']
 
     const [partView, setPartView] = useState(cpuParts)
   
 
 
 
-    function changePartView(){
+    function changePartView(parts){
+
+        setPartView([]); 
+
+        setTimeout(() => {
+            setPartView(parts)
+           
+        }, 10)
+
+        
+        
 
     }
 
@@ -87,18 +97,20 @@ const PartSelector = (props) => {
 
 
 
+
     
 
 
 
     return ( <div className="part-selector-container">
-
+ <div className="view-header"></div>
     <div className="left-side-container">
+       
         
 
         <div className="part-nav-container center-y">
-            <div className="part-nav-link" onClick={() => {setPartView(cpuParts)}}><i class="fas fa-check-circle"></i>CPU</div>
-            <div className="part-nav-link" onClick={() => {setPartView(motherBoardParts)}}><i class="fas fa-plus-circle"></i>Motherboard</div>
+            <div className="part-nav-link" onClick={() => {changePartView(cpuParts)}}><i class="fas fa-check-circle"></i>CPU</div>
+            <div className="part-nav-link" onClick={() => {changePartView(motherBoardParts)}}><i class="fas fa-plus-circle"></i>Motherboard</div>
             <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Graphics Card</div>
             <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Memory</div>
             <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Storage</div>
@@ -120,7 +132,7 @@ const PartSelector = (props) => {
             <div className="part-search-bar center-y"><i class="fas fa-search"></i> Search</div>
         </div>
         <div className="parts-list-container">
-        {partView.map((part) => <PartCard data={part}/>)}
+        {partView.map((part, index) => <PartCard data={part} index={index}/>)}
             
         </div>
 
