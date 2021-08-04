@@ -1,22 +1,44 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import { useSpring, animated } from 'react-spring'
 import "./PartCard.css"
 
 const PartCard = (props) => {
 
-    let cardRef = useRef()
+
+    const cardAnimation = useSpring({from:{opacity: 0}, to:{opacity: 1}, immediate: true, delay:props.index * 100 })
+
+
+
+    const [partSelected, setPartSelected] = useState('select-button')
 
     useEffect(() => {
 
-       
+        let i;
+        let selected = false;
+ 
+        for(i = 0; i < props.selectedParts.length; i++){
 
+            console.log(props.selectedParts[0].item)
+            console.log(props.data)
 
-        let delay = props.index * 1 + 's'
-        cardRef.current.style.transitionDelay = props.index / 10 + 's'
+            if(props.selectedParts[i].item.name === props.data.name){
+                
+                setPartSelected('selected-button')
+                
+                break;
+            }
 
-        console.log(delay)
+            else{
+                setPartSelected('select-button');
+                break;
+            }
+           
+        }
 
-        cardRef.current.style.opacity = 1
-
+        
+        
+                      
+        
 
     }
     
@@ -27,7 +49,19 @@ const PartCard = (props) => {
 
 
 
-    return ( <div className="part-card-container" ref={cardRef}>
+
+    function addPartToList(){
+
+        props.listUpdater('insert', props.data)
+        setPartSelected('selected-button')
+
+    }
+
+
+
+
+
+    return ( <animated.div className="part-card-container"  style={cardAnimation} >
     <div className="part-name">{props.data.name}</div>
     <div className="part-image center-x" style={{backgroundImage:`url(${props.data.imageURL})` }}></div>
     <div className="feature-tags-container">
@@ -38,10 +72,11 @@ const PartCard = (props) => {
     <div className="part-rating">
         <div className="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <div className="rating-count">2,300</div>
+      
     </div>
-    <button className="select-button center-x">Select +</button>
+    <button onClick={addPartToList} className={partSelected + " center-x"}>Select +</button>
 
-</div> );
+</animated.div> );
 }
  
 export default PartCard;
