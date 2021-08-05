@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import './PartSelector.css'
 import PartCard from "../PartCard/PartCard"
+import PartNavLink from "../PartNavLink/PartNavLink"
+
+
+
 import intelImage1 from "../../media/intelchip.png"
 import intelImage2 from "../../media/intelchip2.png"
 import intelImage3 from "../../media/intelchip3.png"
@@ -13,11 +17,13 @@ const PartSelector = (props) => {
     let cpuParts = [{
         name: 'Intel Core i9-9700K',
         imageURL: intelImage2,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i7-9700K',
+        name: 'Intel Core i7-9100K',
         imageURL: intelImage4,
         price: 339.99,
         rating: 5,
@@ -29,7 +35,7 @@ const PartSelector = (props) => {
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i9-9700K',
+        name: 'Intel Core i9-9300K',
         imageURL: intelImage1,
         price: 339.99,
         rating: 5,
@@ -41,7 +47,7 @@ const PartSelector = (props) => {
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i9-9700K',
+        name: 'Intel Core i9-9000K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
@@ -53,19 +59,19 @@ const PartSelector = (props) => {
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i9-9700K',
+        name: 'Intel Core i9-9800K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i9-9700K',
+        name: 'Intel Core i9-97500K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     },{
-        name: 'Intel Core i9-9700K',
+        name: 'Intel Core i9-97400K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
@@ -73,22 +79,114 @@ const PartSelector = (props) => {
     },]
     let motherBoardParts = ['motherboard','motherboard','motherboard','motherboard']
 
-    const [partView, setPartView] = useState(cpuParts)
+    const [partLinks, setPartLinks] = useState([
+        {
+            partCategory: 'cpu',
+            parts: cpuParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'motherboard',
+            parts: motherBoardParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'graphics card',
+            parts: motherBoardParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'memory',
+            parts: motherBoardParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'storage',
+            parts: motherBoardParts,
+            selected:false,
+
+        }
+        ,
+        {
+            partCategory: 'power supply',
+            parts: motherBoardParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'case',
+            parts: motherBoardParts,
+            selected:false,
+
+        },
+        {
+            partCategory: 'peripherals',
+            parts: motherBoardParts,
+            selected:false,
+
+        }
+    ])
+
+
+    
+
+   
+
+    const [partView, setPartView] = useState(partLinks[0])
+   
+    const [selectedParts, setSelectedParts] = useState([])
+   // const [updater, setUpdater] = useState(0)
   
 
 
 
-    function changePartView(parts){
+    function changePartView(index){
 
-        setPartView([]); 
+       setPartView({parts:[]}); 
 
-        setTimeout(() => {
-            setPartView(parts)
+
+ 
+
+
+         setTimeout(() => {
+    
+            setPartView(partLinks[index])
            
         }, 10)
 
         
         
+
+    }
+
+
+    function listUpdater(editType, newItem){
+
+        if(editType === 'insert'){
+            let partList = selectedParts;
+            let newObject = {item: newItem}
+            partList.push(newObject)
+            setSelectedParts('')
+            setTimeout(() => { setSelectedParts(partList)}, 10)
+           
+            console.log(selectedParts)
+        }
+
+        else if(editType === 'delete'){}
+
+    }
+
+
+    function checkPartList(object){
+        let newList = partLinks;
+        let theIndex = newList.indexOf(object);
+        newList[theIndex].selected = true;
+        setPartLinks(newList);
+        console.log(partLinks)
 
     }
 
@@ -105,18 +203,18 @@ const PartSelector = (props) => {
     return ( <div className="part-selector-container">
  <div className="view-header"></div>
     <div className="left-side-container">
+        <button onClick={() => {
+            console.log(selectedParts)
+        }}>Click me</button>
        
         
 
         <div className="part-nav-container center-y">
-            <div className="part-nav-link" onClick={() => {changePartView(cpuParts)}}><i class="fas fa-check-circle"></i>CPU</div>
-            <div className="part-nav-link" onClick={() => {changePartView(motherBoardParts)}}><i class="fas fa-plus-circle"></i>Motherboard</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Graphics Card</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Memory</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Storage</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Power Supply</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Case</div>
-            <div className="part-nav-link"><i class="fas fa-plus-circle"></i>Peripherals</div>
+
+            {partLinks.map((part, index) => <PartNavLink changePartView={changePartView}  index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts}/>)}
+           
+      
+          
 
             <div className="part-nav-footer">
                 <button className="view-cart-button center-x">View Cart</button>
@@ -132,7 +230,7 @@ const PartSelector = (props) => {
             <div className="part-search-bar center-y"><i class="fas fa-search"></i> Search</div>
         </div>
         <div className="parts-list-container">
-        {partView.map((part, index) => <PartCard data={part} index={index}/>)}
+        {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList}  data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} key={index}/>)}
             
         </div>
 

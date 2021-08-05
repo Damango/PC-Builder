@@ -1,6 +1,5 @@
 .part-selector-container {
 	position: relative;
-
 	width: 100%;
 	height: 100%;
 	display: grid;
@@ -16,7 +15,7 @@
 	box-sizing: border-box;
 	width: 100%;
 	padding: 10px;
-	border: 1px solid black;
+	border: 1px solid rgb(192, 192, 192);
 	height: 75px;
 }
 .part-nav-container {
@@ -30,16 +29,7 @@
 	left: 20px;
 }
 
-.part-nav-link {
-	background-color: rgb(247, 247, 247);
-	border-radius: 3px;
-	padding: 10px;
-	margin-bottom: 10px;
-	font-family: "Inter";
-	font-weight: 600;
-	color: #2f3640;
-	transition: 0.3s;
-}
+
 
 .part-nav-link:hover {
 	background-color: rgb(182, 182, 182);
@@ -80,9 +70,11 @@
 	position: relative;
 	box-sizing: border-box;
 	padding: 10px;
-	border: 1px solid black;
+	border-left: 1px solid rgb(192, 192, 192);
 	height: 75px;
 	margin-bottom: 10px;
+
+	width: 95%;
 }
 
 .part-list-category {
@@ -96,7 +88,7 @@
 	background-color: rgb(238, 238, 238);
 	display: inline-block;
 	position: absolute;
-	right: 100px;
+	right: 0px;
 	padding: 10px 50px;
 	border-radius: 5px;
 	font-family: "Inter";

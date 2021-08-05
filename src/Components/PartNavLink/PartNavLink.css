@@ -1,0 +1,10 @@
+.part-nav-link {
+	background-color: rgb(247, 247, 247);
+	border-radius: 3px;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-family: "Inter";
+	font-weight: 600;
+	color: #2f3640;
+	transition: 0.3s;
+}

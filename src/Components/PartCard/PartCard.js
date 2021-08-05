@@ -54,6 +54,7 @@ const PartCard = (props) => {
 
         props.listUpdater('insert', props.data)
         setPartSelected('selected-button')
+        props.checkPartList(props.partView)
 
     }
 
@@ -68,10 +69,10 @@ const PartCard = (props) => {
         <div className="feature-tag">3.4 Ghz</div>
         <div className="feature-tag">8 Cores</div>
     </div>
-    <div className="part-price">$629.99</div>
+    <div className="part-price">${props.data.price}</div>
     <div className="part-rating">
         <div className="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div className="rating-count">2,300</div>
+        <div className="rating-count">{props.data.ratingCount}</div>
       
     </div>
     <button onClick={addPartToList} className={partSelected + " center-x"}>Select +</button>

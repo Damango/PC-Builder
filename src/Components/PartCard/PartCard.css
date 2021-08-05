@@ -9,9 +9,14 @@
 	border-radius: 5px;
 	margin-right: 40px;
 	margin-bottom: 40px;
-	opacity: 0;
-	transition: 0.6s;
+
+	transition: 0.3s;
 	transition-timing-function: ease-in-out;
+}
+
+.part-card-container:hover {
+	box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+	cursor: pointer;
 }
 
 .part-name {
@@ -75,6 +80,27 @@
 	font-family: "Maven Pro";
 	font-size: 18px;
 	font-weight: bold;
+	transition: 0.3s;
+}
+
+.select-button:hover {
+	cursor: pointer;
+	background-color: #0246ad;
+}
+
+.selected-button {
+	position: absolute;
+	background-color: #002c6e;
+	padding: 6px;
+	width: 90%;
+	border-radius: 5px;
+	bottom: 15px;
+	color: white;
+	border-style: none;
+	font-family: "Maven Pro";
+	font-size: 18px;
+	font-weight: bold;
+	transition: 0.3s;
 }
 
 .fa-star {
