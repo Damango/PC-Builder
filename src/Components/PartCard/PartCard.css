@@ -45,11 +45,13 @@
 .feature-tag {
 	display: inline-block;
 	margin-right: 10px;
-	background-color: rgba(219, 219, 219, 0.267);
-	border: 1px solid rgba(0, 0, 0, 0.363);
-	border-radius: 8px;
+	background-color: #0652dd;
+	color: white;
+
+	border-radius: 3px;
 	padding: 5px 10px;
 	font-family: "Inter";
+
 	font-size: 13px;
 }
 

@@ -4,13 +4,25 @@ import PartCard from "../PartCard/PartCard"
 import PartNavLink from "../PartNavLink/PartNavLink"
 
 
-
+// CPUs
 import intelImage1 from "../../media/intelchip.png"
 import intelImage2 from "../../media/intelchip2.png"
 import intelImage3 from "../../media/intelchip3.png"
 import intelImage4 from "../../media/intelchip4.png"
 import ryzen9 from "../../media/ryzen9.webp"
 import ryzen7 from "../../media/ryzen7.png"
+
+// MOTHERBOARDs
+import asusMotherBoard1 from "../../media/asusmotherboard1.jpg"
+import asusMotherBoard2 from "../../media/asusmotherboard2.jpg"
+import gigaByteMotherBoard1 from "../../media/gigabytemotherboard.jpg"
+import rogStrixMotherBoard1 from "../../media/rogmotherboard1.jpg"
+
+
+
+// GRAPHICS CARDS
+import rtx3090 from "../../media/rtx3090.jpg"
+import rtx3080 from "../../media/rtx3080.jpg"
 
 const PartSelector = (props) => {
 
@@ -77,7 +89,78 @@ const PartSelector = (props) => {
         rating: 5,
         ratingCount: 300
     },]
-    let motherBoardParts = ['motherboard','motherboard','motherboard','motherboard']
+    let motherBoardParts = [
+        {
+            name: 'ASUS Prime Z390-A',
+            imageURL: asusMotherBoard2,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        },{
+        name: 'ASUS ROG Strix B450-F',
+        imageURL: asusMotherBoard1,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
+        price: 339.99,
+        rating: 5,
+        ratingCount: 300
+    }
+    ,{
+        name: 'GIGABYTE B450 PRO',
+        imageURL: gigaByteMotherBoard1,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
+        price: 339.99,
+        rating: 5,
+        ratingCount: 300
+    } ,{
+        name: 'ROG Strix Z590-E',
+        imageURL: rogStrixMotherBoard1,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
+        price: 339.99,
+        rating: 5,
+        ratingCount: 300
+    },{
+        name: 'GIGABYTE B450 PRO',
+        imageURL: gigaByteMotherBoard1,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
+        price: 339.99,
+        rating: 5,
+        ratingCount: 300
+    },{
+        name: 'ROG Strix Z590-E',
+        imageURL: rogStrixMotherBoard1,
+        clockSpeed: '3.6 Ghz',
+        coreCount: 8,
+        price: 339.99,
+        rating: 5,
+        ratingCount: 300
+    }]
+
+    let graphicsParts = [
+        {
+            name: 'ASUS RTX 3090',
+            imageURL: rtx3090,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        },
+        {
+            name: 'MSI Gaming RTX 3080',
+            imageURL: rtx3080,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }
+    ]
 
     const [partLinks, setPartLinks] = useState([
         {
@@ -94,7 +177,7 @@ const PartSelector = (props) => {
         },
         {
             partCategory: 'graphics card',
-            parts: motherBoardParts,
+            parts: graphicsParts,
             selected:false,
 
         },
