@@ -11,7 +11,7 @@
 .left-side-container {
 	position: relative;
 	height: 100%;
-
+	border-right: 1px solid gray;
 	
 }
 
@@ -94,26 +94,35 @@
 .part-list-header {
 	position: relative;
 	box-sizing: border-box;
-	padding: 10px;
-	border-left: 1px solid rgb(192, 192, 192);
+	padding-right: 20px;
+	padding-left: 20px;
+	border-bottom: 1px solid gray;
 	height: 75px;
-	margin-bottom: 10px;
+	
 
-	width: 95%;
+	width: 100%;
+	
 }
 
 .part-list-category {
+	position: relative;
 	font-family: "Maven Pro";
 	font-weight: bold;
 	font-size: 45px;
 	color: #2c3e50;
+	
+	
+	display: inline-block;
 }
 
 .part-search-bar {
 	background-color: rgb(238, 238, 238);
 	display: inline-block;
 	position: absolute;
-	right: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+
 	padding: 10px 50px;
 	border-radius: 5px;
 	font-family: "Inter";
@@ -122,11 +131,11 @@
 
 .parts-list-container {
 	position: relative;
-	
+
 	box-sizing: border-box;
-	padding: 10px;
+	padding: 20px;
 	overflow-y: scroll;
-	
+	justify-content: space-between;
 	width: 100%;
 	display: grid;
 	grid-template-columns: auto auto auto;

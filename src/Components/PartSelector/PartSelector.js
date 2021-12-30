@@ -277,8 +277,8 @@ const PartSelector = (props) => {
         <div className="right-side">
 
             <div className="part-list-header" >
-                <div className="part-list-category">CPU</div>
-                <div className="part-search-bar center-y"><i class="fas fa-search"></i> Search</div>
+                <div className="part-list-category center-y">CPU</div>
+                <div className="part-search-bar "><i class="fas fa-search"></i> Search</div>
             </div>
             <div className="parts-list-container">
                 {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} key={index} />)}
