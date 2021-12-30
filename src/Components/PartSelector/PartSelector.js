@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './PartSelector.css'
 import PartCard from "../PartCard/PartCard"
 import PartNavLink from "../PartNavLink/PartNavLink"
@@ -34,55 +34,55 @@ const PartSelector = (props) => {
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i7-9100K',
         imageURL: intelImage4,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'AMD Ryzen 9 3900x',
         imageURL: ryzen9,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-9300K',
         imageURL: intelImage1,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'AMD Ryzen 7 3700',
         imageURL: ryzen7,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-9000K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-1600K',
         imageURL: intelImage3,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-9800K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-97500K',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
-    },{
+    }, {
         name: 'Intel Core i9-97400K',
         imageURL: intelImage2,
         price: 339.99,
@@ -98,48 +98,48 @@ const PartSelector = (props) => {
             price: 339.99,
             rating: 5,
             ratingCount: 300
-        },{
-        name: 'ASUS ROG Strix B450-F',
-        imageURL: asusMotherBoard1,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
-        rating: 5,
-        ratingCount: 300
-    }
-    ,{
-        name: 'GIGABYTE B450 PRO',
-        imageURL: gigaByteMotherBoard1,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
-        rating: 5,
-        ratingCount: 300
-    } ,{
-        name: 'ROG Strix Z590-E',
-        imageURL: rogStrixMotherBoard1,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
-        rating: 5,
-        ratingCount: 300
-    },{
-        name: 'GIGABYTE B450 PRO',
-        imageURL: gigaByteMotherBoard1,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
-        rating: 5,
-        ratingCount: 300
-    },{
-        name: 'ROG Strix Z590-E',
-        imageURL: rogStrixMotherBoard1,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
-        rating: 5,
-        ratingCount: 300
-    }]
+        }, {
+            name: 'ASUS ROG Strix B450-F',
+            imageURL: asusMotherBoard1,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }
+        , {
+            name: 'GIGABYTE B450 PRO',
+            imageURL: gigaByteMotherBoard1,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }, {
+            name: 'ROG Strix Z590-E',
+            imageURL: rogStrixMotherBoard1,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }, {
+            name: 'GIGABYTE B450 PRO',
+            imageURL: gigaByteMotherBoard1,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }, {
+            name: 'ROG Strix Z590-E',
+            imageURL: rogStrixMotherBoard1,
+            clockSpeed: '3.6 Ghz',
+            coreCount: 8,
+            price: 339.99,
+            rating: 5,
+            ratingCount: 300
+        }]
 
     let graphicsParts = [
         {
@@ -166,105 +166,85 @@ const PartSelector = (props) => {
         {
             partCategory: 'cpu',
             parts: cpuParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'motherboard',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'graphics card',
             parts: graphicsParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'memory',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'storage',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         }
         ,
         {
             partCategory: 'power supply',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'case',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         },
         {
             partCategory: 'peripherals',
             parts: motherBoardParts,
-            selected:false,
+            selected: false,
 
         }
     ])
 
-
-    
-
-   
-
     const [partView, setPartView] = useState(partLinks[0])
-   
     const [selectedParts, setSelectedParts] = useState([])
-   // const [updater, setUpdater] = useState(0)
-  
+    // const [updater, setUpdater] = useState(0)
 
+    function changePartView(index) {
 
-
-    function changePartView(index){
-
-       setPartView({parts:[]}); 
-
-
- 
-
-
-         setTimeout(() => {
-    
+        setPartView({ parts: [] });
+        setTimeout(() => {
             setPartView(partLinks[index])
-           
         }, 10)
-
-        
-        
-
     }
 
 
-    function listUpdater(editType, newItem){
+    function listUpdater(editType, newItem) {
 
-        if(editType === 'insert'){
+        if (editType === 'insert') {
             let partList = selectedParts;
-            let newObject = {item: newItem}
+            let newObject = { item: newItem }
             partList.push(newObject)
             setSelectedParts('')
-            setTimeout(() => { setSelectedParts(partList)}, 10)
-           
+            setTimeout(() => { setSelectedParts(partList) }, 10)
+
             console.log(selectedParts)
         }
 
-        else if(editType === 'delete'){}
+        else if (editType === 'delete') { }
 
     }
 
 
-    function checkPartList(object){
+    function checkPartList(object) {
         let newList = partLinks;
         let theIndex = newList.indexOf(object);
         newList[theIndex].selected = true;
@@ -274,53 +254,58 @@ const PartSelector = (props) => {
     }
 
 
-  
 
 
 
 
-    
 
 
 
-    return ( <div className="part-selector-container">
- <div className="view-header"></div>
-    <div className="left-side-container">
-        <button onClick={() => {
-            console.log(selectedParts)
-        }}>Click me</button>
-       
-        
 
-        <div className="part-nav-container center-y">
 
-            {partLinks.map((part, index) => <PartNavLink changePartView={changePartView}  index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts}/>)}
-           
-      
-          
+    return (<div className="part-selector-container">
 
-            <div className="part-nav-footer">
-                <button className="view-cart-button center-x">View Cart</button>
+        <div className="left-side-container">
+            <div className="part-nav-container">
+                {partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts} />)}
+                <div className="part-nav-footer">
+                    <button className="view-cart-button center-x">View Cart</button>
+                </div>
             </div>
         </div>
 
-    </div>
+        <div className="right-side">
 
-    <div className="right-side">
+            <div className="part-list-header" >
+                <div className="part-list-category">CPU</div>
+                <div className="part-search-bar center-y"><i class="fas fa-search"></i> Search</div>
+            </div>
+            <div className="parts-list-container">
+                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} key={index} />)}
 
-        <div className="part-list-header" >
-            <div className="part-list-category">CPU</div>
-            <div className="part-search-bar center-y"><i class="fas fa-search"></i> Search</div>
+            </div>
+
         </div>
-        <div className="parts-list-container">
-        {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList}  data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} key={index}/>)}
-            
-        </div>
-
-    </div>
 
 
-    </div> );
+    </div>);
 }
- 
+
 export default PartSelector;
+
+
+
+/* 
+
+
+  <div className="part-nav-container">
+                {partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts} />)}
+                <div className="part-nav-footer">
+                    <button className="view-cart-button center-x">View Cart</button>
+                </div>
+            </div>
+
+
+
+
+*/
