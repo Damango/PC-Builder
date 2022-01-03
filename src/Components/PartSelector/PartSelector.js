@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './PartSelector.css'
 import PartCard from "../PartCard/PartCard"
 import PartNavLink from "../PartNavLink/PartNavLink"
+import PartModal from "../PartModal/PartModal"
 
 
 // CPUs
@@ -23,6 +24,7 @@ import rogStrixMotherBoard1 from "../../media/rogmotherboard1.jpg"
 // GRAPHICS CARDS
 import rtx3090 from "../../media/rtx3090.jpg"
 import rtx3080 from "../../media/rtx3080.jpg"
+import { render } from '@testing-library/react';
 
 const PartSelector = (props) => {
 
@@ -216,6 +218,8 @@ const PartSelector = (props) => {
 
     const [partView, setPartView] = useState(partLinks[0])
     const [selectedParts, setSelectedParts] = useState([])
+
+    const [partModal, setPartModal] = useState(false)
     // const [updater, setUpdater] = useState(0)
 
     function changePartView(index) {
@@ -254,6 +258,12 @@ const PartSelector = (props) => {
     }
 
 
+    function renderPartModal() {
+        if (partModal) {
+            return <PartModal data={partModal} setPartModal={setPartModal} />
+        }
+    }
+
 
 
 
@@ -264,6 +274,7 @@ const PartSelector = (props) => {
 
 
     return (<div className="part-selector-container">
+        {renderPartModal()}
 
         <div className="left-side-container">
             <div className="part-nav-container">
@@ -281,7 +292,7 @@ const PartSelector = (props) => {
                 <div className="part-search-bar "><i class="fas fa-search"></i> Search</div>
             </div>
             <div className="parts-list-container">
-                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} key={index} />)}
+                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} setPartModal={setPartModal} key={index} />)}
 
             </div>
 
