@@ -3,16 +3,12 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: 300px auto;
-
-	
-	
 }
 
 .left-side-container {
 	position: relative;
 	height: 100%;
 	border-right: 1px solid gray;
-	
 }
 
 .view-header {
@@ -31,22 +27,21 @@
 	padding: 10px;
 	border: 1px solid black;
 	border-radius: 5px;
-	top:50%;
+	top: 50%;
 
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 }
 
-.test-div{
+.test-div {
 	position: absolute;
-	top:50%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	height: 300px;
 	width: 200px;
 	background-color: blue;
 }
-
 
 .part-nav-link:hover {
 	background-color: rgb(182, 182, 182);
@@ -82,13 +77,11 @@
 
 .right-side {
 	position: relative;
-	
 
 	display: grid;
-	grid-template-rows: 75px auto; 
+	grid-template-rows: 75px auto;
 	box-sizing: border-box;
 	overflow-y: scroll;
-	
 }
 
 .part-list-header {
@@ -98,10 +91,8 @@
 	padding-left: 20px;
 	border-bottom: 1px solid gray;
 	height: 75px;
-	
 
 	width: 100%;
-	
 }
 
 .part-list-category {
@@ -110,8 +101,7 @@
 	font-weight: bold;
 	font-size: 45px;
 	color: #2c3e50;
-	
-	
+
 	display: inline-block;
 }
 
@@ -139,7 +129,10 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	
 }
 
-
+@media screen and (min-width: 1800px) {
+	.parts-list-container {
+		grid-template-columns: auto auto auto auto auto;
+	}
+}

@@ -55,6 +55,8 @@ const PartCard = (props) => {
         props.listUpdater('insert', props.data)
         setPartSelected('selected-button')
         props.checkPartList(props.partView)
+      
+        
 
     }
 
@@ -62,7 +64,8 @@ const PartCard = (props) => {
 
 
 
-    return (<animated.div className="part-card-container" style={cardAnimation} onClick={() => { props.setPartModal(props.data) }}>
+    return (<animated.div className="part-card-container" style={cardAnimation}>
+        <div className="part-card-wrapper"  onClick={() => { props.setPartModal(props.data) }}></div>
         <div className="part-name">{props.data.name}</div>
         <div className="part-image center-x" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>
         <div className="feature-tags-container">
@@ -75,7 +78,7 @@ const PartCard = (props) => {
             <div className="rating-count">{props.data.ratingCount}</div>
 
         </div>
-        <button onClick={addPartToList} className={partSelected + " center-x"}>Select +</button>
+        <button onClick={() => {(addPartToList() )}} className={partSelected + " center-x"}>Select +</button>
 
     </animated.div>);
 }
