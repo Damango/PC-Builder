@@ -281,9 +281,7 @@ const PartSelector = (props) => {
 
     const [partView, setPartView] = useState(partLinks[0])
     const [selectedParts, setSelectedParts] = useState([])
-
     const [partModal, setPartModal] = useState(false)
-    // const [updater, setUpdater] = useState(0)
 
     function changePartView(index) {
 
@@ -307,22 +305,14 @@ const PartSelector = (props) => {
 
             for(i = 0; i < partList.length; i++){
                 if(partList[i].item.type === newItem.type){
-                   alreadySelected = true
+                   partList[i].item = newItem
+                   alreadySelected = true;
                 }
-               
             }
-
-            if(alreadySelected){
-                console.log("Cannot add another " + newItem.type)
-            }
-            else{
-                
+            if(!alreadySelected){
                 partList.push(newObject)
-                setSelectedParts(partList)
             }
-            
-            
-           
+            setSelectedParts(partList)
             console.log(selectedParts)
         }
 
