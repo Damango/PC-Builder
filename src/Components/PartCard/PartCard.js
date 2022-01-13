@@ -7,34 +7,13 @@ const PartCard = (props) => {
 
     const cardAnimation = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, immediate: true, delay: props.index * 100 })
 
+    console.log(props)
 
-
-    const [partSelected, setPartSelected] = useState('select-button')
+    const [partSelected, setPartSelected] = useState('')
 
     useEffect(() => {
 
-        let i;
-        let selected = false;
-
-        for (i = 0; i < props.selectedParts.length; i++) {
-
-            console.log(props.selectedParts[0].item)
-            console.log(props.data)
-
-            if (props.selectedParts[i].item.name === props.data.name) {
-
-                setPartSelected('selected-button')
-
-                break;
-            }
-
-            else {
-                setPartSelected('select-button');
-                break;
-            }
-
-        }
-
+       
 
 
 
@@ -52,19 +31,51 @@ const PartCard = (props) => {
 
     function addPartToList() {
 
+        
         props.listUpdater('insert', props.data)
-        setPartSelected('selected-button')
+        setPartSelected('selected-')
         props.checkPartList(props.partView)
       
         
 
     }
 
+    function renderSelectionStyle(){
+
+        let selected = ''
+
+        if(props.selectedParts.length > 0){
+            let i;
+
+            for (i = 0; i < props.selectedParts.length; i++) {
+    
+              
+    
+                if (props.selectedParts[i].item.name === props.data.name) {
+    
+                   selected = 'selected-'
+    
+                   
+                }
+    
+            }
+        }
+
+        else{
+           selected = ''
+        }
+
+        return(selected)
+
+      
+        
+    }
 
 
 
 
-    return (<animated.div className="part-card-container" style={cardAnimation}>
+
+    return (<animated.div className={ renderSelectionStyle() + "part-card-container"} style={cardAnimation}>
         <div className="part-card-wrapper"  onClick={() => { props.setPartModal(props.data) }}></div>
         <div className="part-name">{props.data.name}</div>
         <div className="part-image center-x" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>
@@ -78,7 +89,7 @@ const PartCard = (props) => {
             <div className="rating-count">{props.data.ratingCount}</div>
 
         </div>
-        <button onClick={() => {(addPartToList() )}} className={partSelected + " center-x"}>Select +</button>
+        <button onClick={() => {(addPartToList() )}} className={renderSelectionStyle() + "select-button center-x"}>Select +</button>
 
     </animated.div>);
 }

@@ -1,72 +1,172 @@
-.part-modal-container{
-    position: absolute;
-    width: 900px;
-    height: 550px;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0px 0px 1px 2px rgb(155, 155, 155);
-    left: 50%;
-    top:50%;
-    transform:translate(-50%, -50%);
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 30% 70%;
+.part-modal-container {
+	position: absolute;
+	width: 900px;
+	height: 550px;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0px 0px 1px 2px rgb(155, 155, 155);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	display: grid;
+	grid-template-columns: 30% 70%;
 }
 
-.part-modal-left-side{
-    box-sizing: border-box;
+.part-modal-left-side {
+	position: relative;
+	box-sizing: border-box;
 
-    border-right: 1px solid gray;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
+	border-right: 1px solid gray;
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
 }
 
-
-
-
-.part-modal-right-side{
-    box-sizing: border-box;
-    padding: 20px;
+.part-modal-image {
+	position: absolute;
+	height: 250px;
+	width: 200px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-position: center;
+	background-size: cover;
 }
 
-.close-part-modal-button{
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 0px 1px 1px gray;
-    color: red;
-    border-style: none;
-    border-radius: 50%;
-    right: 20px;
-    top: 20px;
-    padding: 5px;
+.part-modal-select-button {
+	position: absolute;
+
+	color: white;
+	border-style: none;
+	border-radius: 3px;
+	padding: 10px 25px;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	background-color: #1774ff;
+	padding: 6px;
+	width: 90%;
+	border-radius: 5px;
 }
 
+.part-modal-right-side {
+	position: relative;
+	box-sizing: border-box;
+	padding: 20px;
 
-.part-modal-highlights-container{
-    position: relative;
-    
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 150px;
-    
+	height: 100%;
+	overflow-y: scroll;
 }
 
-.part-modal-table-header{
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 30px;
+.close-part-modal-button {
+	position: fixed;
+	background-color: white;
+	box-shadow: 0px 0px 1px 1px gray;
+	color: red;
+	border-style: none;
+	border-radius: 50%;
+	right: 30px;
+	top: 10px;
+	padding: 5px;
 }
 
-.part-modal-highlight{
- margin-bottom: 30px;
+.part-modal-highlights-container {
+	position: relative;
+	max-width: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap !important;
 }
 
-.highlight-value{
-    background-color: rgb(0, 102, 255);
-    color: white;
-    padding: 6px 10px;
-    border-radius: 5px;
+.part-modal-table-header {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.part-modal-highlight {
+	position: relative;
+	margin-bottom: 30px;
+	margin-right: 20px;
+	background-color: white;
+	padding: 10px;
+	box-shadow: 0px 0px 2px 1px rgb(80, 80, 80);
+	border-radius: 3px;
+}
+
+.highlight-value {
+	background-color: rgb(0, 102, 255);
+	color: white;
+	padding: 3px 8px;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.part-modal-table {
+	position: relative;
+}
+.part-modal-table-row {
+	position: relative;
+	background-color: rgb(255, 255, 255);
+	height: 50px;
+	box-shadow: 0px 0px 3px 1px gray;
+	border-radius: 3px;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.row-type {
+	position: relative;
+	display: inline-block;
+
+	height: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	border-right: 1px solid black;
+	font-weight: bold;
+	color: rgb(43, 43, 43);
+}
+
+.row-type span {
+	position: relative;
+	display: inline-block;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.row-description {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px;
+	height: 100%;
+}
+.row-description span {
+	position: relative;
+	display: inline-block;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }

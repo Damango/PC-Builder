@@ -129,6 +129,8 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: auto auto auto auto;
+
+	overflow-x: hidden;
 }
 
 @media screen and (min-width: 1800px) {

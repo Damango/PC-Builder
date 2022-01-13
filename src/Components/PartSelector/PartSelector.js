@@ -30,62 +30,97 @@ const PartSelector = (props) => {
 
     let cpuParts = [{
         name: 'Intel Core i9-9700K',
+        type: 'cpu',
         imageURL: intelImage2,
-        clockSpeed: '3.6 Ghz',
-        coreCount: 8,
-        price: 339.99,
+        price: 439.99,
         rating: 5,
-        ratingCount: 300
+        ratingCount: 300,
+        highlights: [
+            {
+                key: 'Clock Speed',
+                value: '4.6 GHz'
+            },
+            {
+                key: 'Core Count',
+                value: '12 Cores'
+            },  
+            {
+                key: 'Thread Count',
+                value: '20 Threads'
+            },
+            {
+                key: 'L2 Cache',
+                value: '12MB'
+            },
+            {
+                key: 'L3 Cache',
+                value: '25MB'
+            }
+        ],
+        overView: [
+            {key: 'Brand', value: 'Intel'},
+            {key: 'Processor Type', value: 'Desktop'},
+            {key: 'Series', value: 'Core i7 12th Gen'}
+        ]
     }, {
         name: 'Intel Core i7-9100K',
         imageURL: intelImage4,
+        type: 'cpu',
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'AMD Ryzen 9 3900x',
+        type: 'cpu',
         imageURL: ryzen9,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-9300K',
+        type: 'cpu',
         imageURL: intelImage1,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'AMD Ryzen 7 3700',
+        type: 'cpu',
         imageURL: ryzen7,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-9000K',
+        type: 'cpu',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-1600K',
+        type: 'cpu',
         imageURL: intelImage3,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-9800K',
+        type: 'cpu',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-97500K',
+        type: 'cpu',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
         ratingCount: 300
     }, {
         name: 'Intel Core i9-97400K',
+        type: 'cpu',
         imageURL: intelImage2,
         price: 339.99,
         rating: 5,
@@ -94,14 +129,42 @@ const PartSelector = (props) => {
     let motherBoardParts = [
         {
             name: 'ASUS Prime Z390-A',
+            type: 'motherboard',
             imageURL: asusMotherBoard2,
-            clockSpeed: '3.6 Ghz',
-            coreCount: 8,
-            price: 339.99,
+            price: 139.99,
             rating: 5,
-            ratingCount: 300
-        }, {
+            ratingCount: 300,
+            highlights: [
+                {
+                    key: 'Clock Speed',
+                    value: '4.6 GHz'
+                },
+                {
+                    key: 'Core Count',
+                    value: '12 Cores'
+                },  
+                {
+                    key: 'Thread Count',
+                    value: '20 Threads'
+                },
+                {
+                    key: 'L2 Cache',
+                    value: '12MB'
+                },
+                {
+                    key: 'L3 Cache',
+                    value: '25MB'
+                }
+            ],
+            overView: [
+                {key: 'Brand', value: 'Intel'},
+                {key: 'Processor Type', value: 'Desktop'},
+                {key: 'Series', value: 'Core i7 12th Gen'}
+            ]
+        },
+     {
             name: 'ASUS ROG Strix B450-F',
+            type: 'motherboard',
             imageURL: asusMotherBoard1,
             clockSpeed: '3.6 Ghz',
             coreCount: 8,
@@ -234,12 +297,32 @@ const PartSelector = (props) => {
     function listUpdater(editType, newItem) {
 
         if (editType === 'insert') {
-            let partList = selectedParts;
-            let newObject = { item: newItem }
-            partList.push(newObject)
-            setSelectedParts('')
-            setTimeout(() => { setSelectedParts(partList) }, 10)
 
+            let i;
+            
+            let partList = [...selectedParts];
+            let newObject = { item: newItem };
+
+            let alreadySelected = false;
+
+            for(i = 0; i < partList.length; i++){
+                if(partList[i].item.type === newItem.type){
+                   alreadySelected = true
+                }
+               
+            }
+
+            if(alreadySelected){
+                console.log("Cannot add another " + newItem.type)
+            }
+            else{
+                
+                partList.push(newObject)
+                setSelectedParts(partList)
+            }
+            
+            
+           
             console.log(selectedParts)
         }
 
@@ -277,6 +360,7 @@ const PartSelector = (props) => {
         {renderPartModal()}
 
         <div className="left-side-container">
+            <button onClick={() => {console.log(selectedParts)}}>CLICK ME</button>
             <div className="part-nav-container">
                 {partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts} />)}
                 <div className="part-nav-footer">
