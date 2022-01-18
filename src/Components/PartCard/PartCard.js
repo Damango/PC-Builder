@@ -11,22 +11,6 @@ const PartCard = (props) => {
 
     const [partSelected, setPartSelected] = useState('')
 
-    useEffect(() => {
-
-       
-
-
-
-
-
-    }
-
-
-        , [])
-
-
-
-
 
 
     function addPartToList() {
@@ -46,29 +30,16 @@ const PartCard = (props) => {
 
         if(props.selectedParts.length > 0){
             let i;
-
             for (i = 0; i < props.selectedParts.length; i++) {
-    
-              
-    
                 if (props.selectedParts[i].item.name === props.data.name) {
-    
                    selected = 'selected-'
-    
-                   
                 }
-    
             }
         }
-
         else{
            selected = ''
         }
-
         return(selected)
-
-      
-        
     }
 
 

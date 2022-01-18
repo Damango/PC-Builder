@@ -1,0 +1,119 @@
+.checkout-page-container {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.checkout-page-parts-list-container {
+	position: relative;
+
+	width: 80%;
+}
+
+.checkout-page-parts-list-header {
+	font-size: 30px;
+	font-weight: bold;
+}
+.checkout-page-parts-list-wrapper {
+	margin-top: 20px;
+}
+
+.checkout-page-part-container {
+	position: relative;
+	background-color: white;
+	box-shadow: 0px 0px 2px 2px rgb(165, 165, 165);
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+.checkout-page-part-image-container {
+	position: relative;
+
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+
+	float: left;
+}
+
+.checkout-page-part-image {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.checkout-page-part-name {
+	margin-bottom: 20px;
+	font-family: "Maven Pro";
+	font-weight: bold;
+	color: #2f3640;
+	font-size: 22px;
+}
+
+.checkout-page-part-details-wrapper {
+	position: relative;
+
+	width: 400px;
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.checkout-page-part-highlights-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	font-family: Inter;
+}
+
+.checkout-page-part-highlight {
+	text-align: left;
+	margin-bottom: 10px;
+	min-width: 200px;
+	float: left;
+}
+
+.checkout-page-part-price {
+	position: relative;
+	height: 100%;
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 22px;
+	color: #2f3640;
+	text-align: right;
+	float: right;
+}
+
+.checkout-page-remove-button {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	box-shadow: 0px 0px 1px 1px rgb(168, 167, 167);
+	color: red;
+	background-color: white;
+	padding: 4px 8px;
+	border-radius: 2px;
+	border-style: none;
+}
+.checkout-page-remove-button:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 1px 2px rgb(168, 167, 167);
+}
+
+.checkout-page-summary-container {
+	position: absolute;
+	width: 15%;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 600px;
+	background-color: white;
+	box-shadow: 0px 0px 1px 1px gray;
+}

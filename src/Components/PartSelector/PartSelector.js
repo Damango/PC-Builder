@@ -280,7 +280,6 @@ const PartSelector = (props) => {
     ])
 
     const [partView, setPartView] = useState(partLinks[0])
-    const [selectedParts, setSelectedParts] = useState([])
     const [partModal, setPartModal] = useState(false)
 
     function changePartView(index) {
@@ -298,7 +297,7 @@ const PartSelector = (props) => {
 
             let i;
             
-            let partList = [...selectedParts];
+            let partList = [...props.selectedParts];
             let newObject = { item: newItem };
 
             let alreadySelected = false;
@@ -312,8 +311,8 @@ const PartSelector = (props) => {
             if(!alreadySelected){
                 partList.push(newObject)
             }
-            setSelectedParts(partList)
-            console.log(selectedParts)
+            props.setSelectedParts(partList)
+            console.log(props.selectedParts)
         }
 
         else if (editType === 'delete') { }
@@ -350,11 +349,11 @@ const PartSelector = (props) => {
         {renderPartModal()}
 
         <div className="left-side-container">
-            <button onClick={() => {console.log(selectedParts)}}>CLICK ME</button>
+            <button onClick={() => {console.log(props.selectedParts)}}>CLICK ME</button>
             <div className="part-nav-container">
-                {partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={selectedParts} />)}
+                {partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
                 <div className="part-nav-footer">
-                    <button className="view-cart-button center-x">View Cart</button>
+                    <button className="view-cart-button center-x" onClick={() =>{props.setViewState('checkout-page')}}>View Cart</button>
                 </div>
             </div>
         </div>
@@ -366,7 +365,7 @@ const PartSelector = (props) => {
                 <div className="part-search-bar "><i class="fas fa-search"></i> Search</div>
             </div>
             <div className="parts-list-container">
-                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={selectedParts} setPartModal={setPartModal} key={index} />)}
+                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={props.selectedParts} setPartModal={setPartModal} key={index} />)}
 
             </div>
 
