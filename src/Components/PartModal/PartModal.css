@@ -16,10 +16,11 @@
 .part-modal-left-side {
 	position: relative;
 	box-sizing: border-box;
-
+	font-family: "Maven Pro";
 	border-right: 1px solid gray;
 	padding: 15px;
 	text-align: center;
+	font-family: "Maven Pro";
 	font-weight: bold;
 	font-size: 25px;
 }
@@ -84,6 +85,7 @@
 .part-modal-table-header {
 	font-size: 30px;
 	font-weight: bold;
+	font-family: "Open Sans";
 	margin-bottom: 30px;
 }
 

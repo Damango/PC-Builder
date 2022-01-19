@@ -7,7 +7,7 @@ const CheckoutPage = (props) => {
     console.log(props)
     return ( <div className="checkout-page-container">
        <div className="checkout-page-parts-list-container">
-           <div className="checkout-page-parts-list-header">Shopping Cart (2)</div>
+           <div className="checkout-page-parts-list-header">Shopping Cart ({props.selectedParts.length})</div>
 
            <div className="checkout-page-parts-list-wrapper">
             {props.selectedParts.map((part) => 
