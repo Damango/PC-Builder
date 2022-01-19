@@ -10,7 +10,7 @@
 .checkout-page-parts-list-container {
 	position: relative;
 
-	width: 80%;
+	width: 75%;
 }
 
 .checkout-page-parts-list-header {
@@ -109,11 +109,74 @@
 
 .checkout-page-summary-container {
 	position: absolute;
-	width: 15%;
-	right: 15px;
+	box-sizing: border-box;
+	padding: 20px;
+	width: 18%;
+	right: 75px;
 	top: 50%;
 	transform: translateY(-50%);
-	height: 600px;
+	min-height: 650px;
 	background-color: white;
-	box-shadow: 0px 0px 1px 1px gray;
+	box-shadow: 0px 0px 2px 2px gray;
+	border-radius: 3px;
+}
+
+.item-summary-header {
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 25px;
+	color: #2f3640;
+}
+
+.item-summary-list {
+}
+
+.item-summary-item {
+	margin-bottom: 10px;
+	font-family: "Maven Pro";
+	font-weight: 600;
+	font-size: 18px;
+	display: flex;
+	justify-content: space-between;
+}
+.summary-footer {
+	position: absolute;
+
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0px;
+	width: 100%;
+	padding: 20px;
+
+	box-sizing: border-box;
+}
+
+.checkout-button {
+	position: relative;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-style: none;
+	background-color: #2ecc71;
+	color: white;
+	padding: 10px 25px;
+	font-size: 25px;
+	font-family: "Maven Pro";
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.checkout-button:hover {
+	background-color: #1ca053;
+	cursor: pointer;
+}
+
+.summary-footer-total-and-count {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-family: "Open Sans";
+	font-size: 20px;
+	font-weight: 600;
 }

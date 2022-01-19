@@ -9,8 +9,6 @@
 	box-shadow: 0px 0px 2px 2px rgb(179, 179, 179);
 	border-radius: 5px;
 
-	margin-bottom: 30px;
-
 	transition: 0.3s;
 	transition-timing-function: ease-in-out;
 	border: 2px solid transparent;
@@ -28,8 +26,6 @@
 	padding: 15px;
 	box-shadow: 0px 0px 2px 2px rgb(179, 179, 179);
 	border-radius: 5px;
-
-	margin-bottom: 30px;
 
 	transition: 0.3s;
 	transition-timing-function: ease-in-out;
@@ -146,32 +142,21 @@
 	color: rgb(243, 227, 0);
 }
 
-@media screen and (min-width: 1800px) {
+@media only screen and (max-width: 1800px) {
 	.part-card-container {
-		width: 255px;
-		height: 420px;
+		min-width: 340px;
 	}
 
 	.selected-part-card-container {
-		width: 255px;
-		height: 420px;
-	}
-	.parts-list-container {
-		grid-template-columns: auto auto auto auto auto;
+		min-width: 340px;
 	}
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1770px) {
 	.part-card-container {
-		min-width: 285px;
+		min-width: 330px;
 		min-height: 390px;
 	}
-
-	.selected-part-card-container {
-		min-width: 285px;
-		min-height: 390px;
-	}
-
 	.part-image {
 		width: 150px;
 		height: 150px;
@@ -190,5 +175,52 @@
 
 	.part-price {
 		font-size: 19px;
+	}
+
+	.selected-part-card-container {
+		min-width: 340px;
+	}
+}
+
+@media only screen and (max-width: 1750px) {
+	.part-card-container {
+		min-width: 300px;
+		min-height: 390px;
+	}
+}
+
+@media only screen and (max-width: 1600px) {
+	.part-card-container {
+		min-width: 280px;
+		min-height: 390px;
+	}
+}
+
+@media only screen and (max-width: 1530px) {
+	.part-card-container {
+		min-width: 260px;
+		min-height: 390px;
+	}
+}
+
+@media only screen and (max-width: 1400px) {
+	.part-card-container {
+		min-width: 240px;
+		min-height: 390px;
+	}
+}
+
+@media only screen and (max-width: 1545px) {
+	.part-card-container {
+	}
+}
+
+@media only screen and (max-width: 1491px) {
+	.part-card-container {
+	}
+}
+
+@media only screen and (max-width: 1455px) {
+	.part-card-container {
 	}
 }

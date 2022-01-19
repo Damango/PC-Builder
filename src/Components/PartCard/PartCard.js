@@ -7,8 +7,6 @@ const PartCard = (props) => {
 
     const cardAnimation = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, immediate: true, delay: props.index * 100 })
 
-    console.log(props)
-
     const [partSelected, setPartSelected] = useState('')
 
 
@@ -49,6 +47,7 @@ const PartCard = (props) => {
     return (<animated.div className={ renderSelectionStyle() + "part-card-container"} style={cardAnimation}>
         <div className="part-card-wrapper"  onClick={() => { props.setPartModal(props.data) }}></div>
         <div className="part-name">{props.data.name}</div>
+       
         <div className="part-image center-x" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>
         <div className="feature-tags-container">
             <div className="feature-tag">3.4 Ghz</div>
