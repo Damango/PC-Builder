@@ -74,17 +74,25 @@ const [partLinks, setPartLinks] = useState([
 const [selectedParts, setSelectedParts] = useState([])
 
 
+function removeSelectedPart(index){
+    let newSelectedParts = [...selectedParts];
+    newSelectedParts.splice(index, 1)
+    setSelectedParts(newSelectedParts)
+}
+
 
 
 function renderViewState(){
     if(viewState === 'part-selector'){
        
-        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks}/>)
+        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart}/>)
     }
     else if(viewState === 'checkout-page'){
-        return(<CheckoutPage selectedParts={selectedParts} setSelectedParts={setSelectedParts}/>)
+        return(<CheckoutPage selectedParts={selectedParts} setSelectedParts={setSelectedParts} removeSelectedPart={removeSelectedPart}/>)
     }
 }
+
+
 
     return (<div className="pc-builder-app-container">
         <div className="main-nav-bar-container">

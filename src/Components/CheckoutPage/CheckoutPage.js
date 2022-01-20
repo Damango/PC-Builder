@@ -29,7 +29,7 @@ const CheckoutPage = (props) => {
            <div className="checkout-page-parts-list-header">Shopping Cart ({props.selectedParts.length})</div>
 
            <div className="checkout-page-parts-list-wrapper">
-            {props.selectedParts.map((part) => 
+            {props.selectedParts.map((part, index) => 
                 <div className="checkout-page-part-container">
                     <div className="checkout-page-part-image-container">
                         <div className="checkout-page-part-image"style={{ backgroundImage: `url(${part.item.imageURL})` }}></div>
@@ -37,16 +37,13 @@ const CheckoutPage = (props) => {
                     <div className="checkout-page-part-details-wrapper">
                         <div className="checkout-page-part-name">{part.item.name}</div>
                         <div className="checkout-page-part-highlights-container">
-                            {part.item.highlights.map((highlight) => <div className="checkout-page-part-highlight">{highlight.key +':' + " " +highlight.value}</div>)}
+                            {part.item.highlights.map((highlight, index) => <div className="checkout-page-part-highlight">{highlight.key +':' + " " +highlight.value}</div>)}
                         </div>
                     </div>
-
                     <div className="checkout-page-part-price">
                         <div className="checkout-page-part-price-amount">${part.item.price}</div>
                     </div>
-                    <button className="checkout-page-remove-button">REMOVE</button>
-                    
-                   
+                    <button className="checkout-page-remove-button" onClick={() => {props.removeSelectedPart(index); console.log(index)}}>REMOVE</button>
                 </div>)}
            </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PartSelector.css'
 import PartCard from "../PartCard/PartCard"
 import PartNavLink from "../PartNavLink/PartNavLink"
@@ -12,7 +12,35 @@ const PartSelector = (props) => {
 
 
    
-   
+   useEffect(() => {
+       let thePartLinks = [...props.partLinks]
+       let i, j;
+    for(i = 0; i < thePartLinks.length; i++){
+        if(props.selectedParts.length === 0){
+            thePartLinks[i].selected = false
+        }
+        for(j = 0; j < props.selectedParts.length; j++){
+            console.log(thePartLinks[i].partCategory)
+            console.log(props.selectedParts[i])
+            if(thePartLinks[i].partCategory === props.selectedParts[j].item.type){
+                thePartLinks[i].selected = true
+                break;
+             
+            }
+            else{
+                thePartLinks[i].selected = false
+              
+            }
+        }
+        
+    }
+
+    props.setPartLinks(thePartLinks)
+    console.log(props.partLinks)
+    console.log(props.selectedParts)
+
+
+   }, [])
 
    
 
@@ -65,7 +93,7 @@ const PartSelector = (props) => {
         let newList = props.partLinks;
         let theIndex = newList.indexOf(object);
         newList[theIndex].selected = true;
-        props.setpartLinks(newList);
+        props.setPartLinks(newList);
         console.log(props.partLinks)
 
     }
