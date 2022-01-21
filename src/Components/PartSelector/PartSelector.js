@@ -68,7 +68,6 @@ const PartSelector = (props) => {
             
             let partList = [...props.selectedParts];
             let newObject = { item: newItem };
-
             let alreadySelected = false;
 
             for(i = 0; i < partList.length; i++){
@@ -118,8 +117,6 @@ const PartSelector = (props) => {
         {renderPartModal()}
 
         <div className="left-side-container">
-            <button onClick={() => {console.log(props.selectedParts)}}>CLICK ME</button>
-            <button onClick={() => {console.log(props.partLinks)}}>CLICK ME</button>
             <div className="part-nav-container">
                 {props.partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
                 <div className="part-nav-footer">

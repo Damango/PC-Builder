@@ -187,10 +187,20 @@
 		min-width: 300px;
 		min-height: 390px;
 	}
+
+	.selected-part-card-container {
+		min-width: 300px;
+		min-height: 390px;
+	}
 }
 
 @media only screen and (max-width: 1600px) {
 	.part-card-container {
+		min-width: 280px;
+		min-height: 390px;
+	}
+
+	.selected-part-card-container {
 		min-width: 280px;
 		min-height: 390px;
 	}
@@ -201,6 +211,11 @@
 		min-width: 260px;
 		min-height: 390px;
 	}
+
+	.selected-part-card-container {
+		min-width: 260px;
+		min-height: 390px;
+	}
 }
 
 @media only screen and (max-width: 1400px) {
@@ -208,19 +223,9 @@
 		min-width: 240px;
 		min-height: 390px;
 	}
-}
 
-@media only screen and (max-width: 1545px) {
-	.part-card-container {
-	}
-}
-
-@media only screen and (max-width: 1491px) {
-	.part-card-container {
-	}
-}
-
-@media only screen and (max-width: 1455px) {
-	.part-card-container {
+	.seleceted-part-card-container {
+		min-width: 240px;
+		min-height: 390px;
 	}
 }
