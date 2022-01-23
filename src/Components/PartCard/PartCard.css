@@ -157,6 +157,7 @@
 		min-width: 330px;
 		min-height: 390px;
 	}
+
 	.part-image {
 		width: 150px;
 		height: 150px;
@@ -227,5 +228,51 @@
 	.seleceted-part-card-container {
 		min-width: 240px;
 		min-height: 390px;
+	}
+
+	.part-image {
+		width: 130px;
+		height: 130px;
+	}
+}
+
+@media only screen and (max-width: 1328px) {
+	.part-card-container {
+		min-width: 310px;
+		min-height: 380px;
+	}
+
+	.seleceted-part-card-container {
+		min-width: 310px;
+		min-height: 380px;
+	}
+
+	.part-image {
+		width: 140px;
+		height: 140px;
+	}
+}
+
+@media only screen and (max-width: 1328px) {
+	.part-card-container {
+		min-width: 295px;
+		min-height: 380px;
+	}
+
+	.seleceted-part-card-container {
+		min-width: 295px;
+		min-height: 380px;
+	}
+}
+
+@media only screen and (max-width: 1230px) {
+	.part-card-container {
+		min-width: 280px;
+		min-height: 380px;
+	}
+
+	.seleceted-part-card-container {
+		min-width: 280px;
+		min-height: 380px;
 	}
 }

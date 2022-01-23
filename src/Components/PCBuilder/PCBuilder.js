@@ -88,7 +88,7 @@ function renderViewState(){
         return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart}/>)
     }
     else if(viewState === 'checkout-page'){
-        return(<CheckoutPage selectedParts={selectedParts} setSelectedParts={setSelectedParts} removeSelectedPart={removeSelectedPart}/>)
+        return(<CheckoutPage partLinks={partLinks} setPartLinks={setPartLinks} selectedParts={selectedParts} setSelectedParts={setSelectedParts} removeSelectedPart={removeSelectedPart}/>)
     }
 }
 
@@ -103,6 +103,18 @@ function renderViewState(){
             </div>
             <button className="nav-view-cart-button" onClick={() => {setViewState('checkout-page')}} >View Cart</button>
         </div>
+
+        <div className="mobile-nav-bar-container">
+            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip"></i></div>
+
+            
+
+
+            <div className="mobile-nav-bar-menu-button"><i class="fas fa-bars"></i></div>
+
+        </div>
+
+
         <div className="main-view-container">
            {renderViewState()}
         </div>

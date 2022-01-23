@@ -20,31 +20,49 @@ const CheckoutPage = (props) => {
         return (total)
     }
 
+    function renderItemSections(){
+        console.log(props.selectedParts)
+        let i, j;
+
+        let sectionArray = [];
+        for(i = 0; i < props.partLinks.length; i++){
+            if(!props.partLinks[i].selected){
+                sectionArray.push(<div className="checkout-page-part-container">PICK A PART</div>)
+            }
+            else{
+                for(j = 0; j < props.selectedParts.length; j++){
+                    if(props.selectedParts[j].item.type === props.partLinks[i].partCategory){
+                        sectionArray.push(<div className="checkout-page-part-container">TEST</div>)
+                    }
+                }
+            }
+        }
+
+
+        return(sectionArray)
+    }
+
 
 
 
     console.log(props)
     return ( <div className="checkout-page-container">
+        <button onClick={renderItemSections}>CLICK ME</button>
        <div className="checkout-page-parts-list-container">
            <div className="checkout-page-parts-list-header">Shopping Cart ({props.selectedParts.length})</div>
 
            <div className="checkout-page-parts-list-wrapper">
-            {props.selectedParts.map((part, index) => 
-                <div className="checkout-page-part-container">
-                    <div className="checkout-page-part-image-container">
-                        <div className="checkout-page-part-image"style={{ backgroundImage: `url(${part.item.imageURL})` }}></div>
-                    </div>
-                    <div className="checkout-page-part-details-wrapper">
-                        <div className="checkout-page-part-name">{part.item.name}</div>
-                        <div className="checkout-page-part-highlights-container">
-                            {part.item.highlights.map((highlight, index) => <div className="checkout-page-part-highlight">{highlight.key +':' + " " +highlight.value}</div>)}
-                        </div>
-                    </div>
-                    <div className="checkout-page-part-price">
-                        <div className="checkout-page-part-price-amount">${part.item.price}</div>
-                    </div>
-                    <button className="checkout-page-remove-button" onClick={() => {props.removeSelectedPart(index); console.log(index)}}>REMOVE</button>
-                </div>)}
+            
+
+
+          
+            {renderItemSections()}
+
+
+
+
+
+
            </div>
 
 
@@ -74,3 +92,31 @@ const CheckoutPage = (props) => {
 }
  
 export default CheckoutPage;
+
+
+
+
+/*
+{props.selectedParts.map((part, index) => 
+                <div className="checkout-page-part-container">
+                    <div className="checkout-page-part-image-container">
+                        <div className="checkout-page-part-image"style={{ backgroundImage: `url(${part.item.imageURL})` }}></div>
+                    </div>
+                    <div className="checkout-page-part-details-wrapper">
+                        <div className="checkout-page-part-name">{part.item.name}</div>
+                        <div className="checkout-page-part-highlights-container">
+                            {part.item.highlights.map((highlight, index) => <div className="checkout-page-part-highlight">{highlight.key +':' + " " +highlight.value}</div>)}
+                        </div>
+                    </div>
+                    <div className="checkout-page-part-price">
+                        <div className="checkout-page-part-price-amount">${part.item.price}</div>
+                    </div>
+                    <button className="checkout-page-remove-button" onClick={() => {props.removeSelectedPart(index); console.log(index)}}>REMOVE</button>
+                </div>)}
+
+
+
+
+
+
+*/

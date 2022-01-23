@@ -15,24 +15,24 @@ const PartSelector = (props) => {
    useEffect(() => {
        let thePartLinks = [...props.partLinks]
        let i, j;
-    for(i = 0; i < thePartLinks.length; i++){
-        if(props.selectedParts.length === 0){
-            thePartLinks[i].selected = false
-        }
-        for(j = 0; j < props.selectedParts.length; j++){
-            console.log(thePartLinks[i].partCategory)
-            console.log(props.selectedParts[i])
-            if(thePartLinks[i].partCategory === props.selectedParts[j].item.type){
-                thePartLinks[i].selected = true
-                break;
-             
-            }
-            else{
+        for(i = 0; i < thePartLinks.length; i++){
+            if(props.selectedParts.length === 0){
                 thePartLinks[i].selected = false
-              
             }
-        }
-        
+            for(j = 0; j < props.selectedParts.length; j++){
+                console.log(thePartLinks[i].partCategory)
+                console.log(props.selectedParts[i])
+                if(thePartLinks[i].partCategory === props.selectedParts[j].item.type){
+                    thePartLinks[i].selected = true
+                    break;
+                
+                }
+                else{
+                    thePartLinks[i].selected = false
+                
+                }
+            }
+            
     }
 
     props.setPartLinks(thePartLinks)
@@ -114,7 +114,15 @@ const PartSelector = (props) => {
 
 
     return (<div className="part-selector-container">
+        <div className="part-selector-mobile"></div>
         {renderPartModal()}
+
+        <div className="mobile-part-nav-container">
+                {props.partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
+                <div className="part-nav-footer">
+                    <button className="view-cart-button center-x" onClick={() =>{props.setViewState('checkout-page')}}>View Cart</button>
+                </div>
+            </div>
 
         <div className="left-side-container">
             <div className="part-nav-container">
