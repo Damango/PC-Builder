@@ -19,6 +19,7 @@
 	border: 1px solid rgb(192, 192, 192);
 	height: 75px;
 }
+
 .part-nav-container {
 	position: absolute;
 	background-color: white;
@@ -132,6 +133,10 @@
 
 	overflow-x: hidden;
 	grid-gap: 20px;
+}
+
+.part-selector-mobile {
+	display: none;
 }
 
 .mobile-part-nav-container {

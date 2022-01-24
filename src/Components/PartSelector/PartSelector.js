@@ -122,7 +122,7 @@ const PartSelector = (props) => {
                 <div className="part-nav-footer">
                     <button className="view-cart-button center-x" onClick={() =>{props.setViewState('checkout-page')}}>View Cart</button>
                 </div>
-            </div>
+        </div>
 
         <div className="left-side-container">
             <div className="part-nav-container">

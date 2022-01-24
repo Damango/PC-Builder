@@ -43,12 +43,7 @@
 }
 
 .mobile-nav-bar-container {
-	position: relative;
-	padding: 20px;
-	box-sizing: border-box;
-	background-color: red;
-	display: flex;
-	justify-content: space-between;
+	display: none;
 }
 
 .mobile-nav-bar-parts-button {
@@ -72,5 +67,14 @@
 @media only screen and (max-width: 1230px) {
 	.main-nav-bar-container {
 		display: none;
+	}
+
+	.mobile-nav-bar-container {
+		position: relative;
+		padding: 20px;
+		box-sizing: border-box;
+		background-color: red;
+		display: flex;
+		justify-content: space-between;
 	}
 }
