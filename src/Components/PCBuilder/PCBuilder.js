@@ -68,7 +68,7 @@ const [partLinks, setPartLinks] = useState([
 ])
 
 
-
+const [mobilePartNavBar, setMobilePartNavBar] = useState(false)
 
 
 const [selectedParts, setSelectedParts] = useState([])
@@ -85,7 +85,7 @@ function removeSelectedPart(index){
 function renderViewState(){
     if(viewState === 'part-selector'){
        
-        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart}/>)
+        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart} mobilePartNavBar={mobilePartNavBar} setMobilePartNavBar={setMobilePartNavBar}/>)
     }
     else if(viewState === 'checkout-page'){
         return(<CheckoutPage partLinks={partLinks} setPartLinks={setPartLinks} selectedParts={selectedParts} setSelectedParts={setSelectedParts} removeSelectedPart={removeSelectedPart}/>)
@@ -105,7 +105,7 @@ function renderViewState(){
         </div>
 
         <div className="mobile-nav-bar-container">
-            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip"></i></div>
+            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); alert(mobilePartNavBar); }}></i></div>
 
             
 

@@ -106,6 +106,20 @@ const PartSelector = (props) => {
 
 
 
+    function renderMobilePartNavBar(){
+        if(props.mobilePartNavBar){
+           
+            return( <div className="mobile-part-nav-wrapper">
+                <div className="mobile-part-nav-overlay" onClick={() => {props.setMobilePartNavBar(false)}}></div>
+            <div className="mobile-part-nav-container">
+                    {props.partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
+                    <div className="part-nav-footer">
+                        <button className="view-cart-button center-x" onClick={() =>{props.setViewState('checkout-page')}}>View Cart</button>
+                    </div>
+            </div>
+        </div>)
+        }
+    }
 
 
 
@@ -114,16 +128,11 @@ const PartSelector = (props) => {
 
 
     return (<div className="part-selector-container">
-        <div className="part-selector-mobile"></div>
+        {renderMobilePartNavBar()}
         {renderPartModal()}
 
-        <div className="mobile-part-nav-container">
-                {props.partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
-                <div className="part-nav-footer">
-                    <button className="view-cart-button center-x" onClick={() =>{props.setViewState('checkout-page')}}>View Cart</button>
-                </div>
-        </div>
 
+      
         <div className="left-side-container">
             <div className="part-nav-container">
                 {props.partLinks.map((part, index) => <PartNavLink changePartView={changePartView} index={index} selected={part.selected} title={part.partCategory} parts={part.parts} partType={part.partCategory} selectedParts={props.selectedParts} />)}
@@ -132,18 +141,14 @@ const PartSelector = (props) => {
                 </div>
             </div>
         </div>
-
         <div className="right-side">
-
             <div className="part-list-header" >
                 <div className="part-list-category center-y">{partView.partCategory.toUpperCase()}</div>
                 <div className="part-search-bar "><i class="fas fa-search"></i> Search</div>
             </div>
             <div className="parts-list-container">
                 {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={props.selectedParts} setPartModal={setPartModal} key={index} />)}
-
             </div>
-
         </div>
 
 
