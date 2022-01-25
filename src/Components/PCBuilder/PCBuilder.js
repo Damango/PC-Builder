@@ -105,7 +105,7 @@ function renderViewState(){
         </div>
 
         <div className="mobile-nav-bar-container">
-            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); alert(mobilePartNavBar); }}></i></div>
+            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); }}></i></div>
 
             
 

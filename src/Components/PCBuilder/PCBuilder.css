@@ -47,21 +47,42 @@
 }
 
 .mobile-nav-bar-parts-button {
+	position: relative;
 	background-color: white;
 	box-shadow: 0px 0px 2px 1px black;
-	max-height: 30px;
-	width: 30px;
+	display: inline-block;
 	text-align: center;
 	box-sizing: border-box;
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 3px;
+}
+
+.mobile-nav-bar-parts-button i {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.mobile-nav-bar-menu-button i {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .mobile-nav-bar-menu-button {
+	position: relative;
 	background-color: white;
 	box-shadow: 0px 0px 2px 1px black;
-	max-height: 30px;
 	width: 30px;
+	height: 30px;
 	text-align: center;
 	box-sizing: border-box;
+	float: right;
+	border-radius: 3px;
 }
 
 @media only screen and (max-width: 1230px) {
@@ -74,8 +95,7 @@
 		position: relative;
 		padding: 20px;
 		box-sizing: border-box;
-		background-color: red;
-		display: flex;
-		justify-content: space-between;
+		border-bottom: 1px solid gray;
+		background-color: white;
 	}
 }
