@@ -162,7 +162,21 @@
 	padding: 20px;
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (min-width: 1231px) {
+	.part-modal-container {
+		position: absolute !important;
+		top: 50% !important;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 800px;
+		height: 600px;
+		background-color: red;
+		bottom: unset;
+	}
+}
+
+@media only screen and (max-width: 1230px) {
 	.part-modal-container {
 		position: absolute !important;
 		bottom: 0px;
@@ -179,6 +193,56 @@
 		height: 100%;
 		width: 100vw;
 		background-color: white;
+		overflow-y: scroll;
+	}
+
+	.mobile-part-modal-container::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	.mobile-part-modal-container {
+	}
+
+	.mobile-part-modal-container .part-modal-title {
+		margin-top: 10px;
+		text-align: center;
+		font-size: 25px;
+	}
+
+	.mobile-part-modal-container .part-modal-price {
+		text-align: center;
+		font-size: 25px;
+		margin-top: 10px;
+	}
+
+	.mobile-part-modal-container .part-modal-select-button {
+		position: relative;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.mobile-part-modal-container .part-modal-image {
+		position: relative;
+
+		left: 50%;
+		top: unset;
+		transform: translateX(-50%);
+		margin-top: 50px;
+	}
+
+	.mobile-part-modal-container .part-modal-highlight {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+	}
+
+	.mobile-part-modal-container .part-modal-table-row {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 90%;
+		font-size: 18px;
 	}
 
 	.part-modal-left-side {

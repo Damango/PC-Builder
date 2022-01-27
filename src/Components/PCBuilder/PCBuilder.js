@@ -5,6 +5,7 @@ import CheckoutPage from "../CheckoutPage/CheckoutPage"
 import cpuParts from "../../data/cpuparts.js"
 import motherBoardParts from "../../data/motherboardparts"
 import graphicsCardParts from "../../data/graphicscardparts"
+import memoryParts from "../../data/memoryparts"
 import {useState} from 'react'
 const PCBuilder = () => {
 
@@ -37,7 +38,7 @@ const [partLinks, setPartLinks] = useState([
     },
     {
         partCategory: 'memory',
-        parts: graphicsCardParts,
+        parts: memoryParts,
         selected: false,
 
     },
@@ -69,6 +70,7 @@ const [partLinks, setPartLinks] = useState([
 
 
 const [mobilePartNavBar, setMobilePartNavBar] = useState(false)
+const [mobileNavBar, setMobileNavBar] = useState(false)
 
 
 const [selectedParts, setSelectedParts] = useState([])
@@ -81,11 +83,27 @@ function removeSelectedPart(index){
 }
 
 
+function renderMobileNavBar(){
+    if(mobileNavBar){
+        <div className="mobile-nav-bar-wrapper">
+            <div className="mobile-nav-bar-container">
+                <div className="mobile-nav-overlay" onClick={() => {setMobileNavBar(false)}}></div>
+                <div className="mobile-nav-links-container">
+                    <div className="mobile-nav-link" onClick={() => {setViewState('part-selector')}}>Part Selector</div>
+                    <div className="mobile-nav-link" >Community Builds</div>
+                    <div className="mobile-nav-link" >Finished Builds</div>
+                    <div className="mobile-nav-link" onClick={() => {setViewState('checkout-page')}}>View Cart</div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
 
 function renderViewState(){
     if(viewState === 'part-selector'){
        
-        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart} mobilePartNavBar={mobilePartNavBar} setMobilePartNavBar={setMobilePartNavBar}/>)
+        return(<PartSelector setViewState={setViewState} selectedParts={selectedParts} setSelectedParts={setSelectedParts} partLinks={partLinks} setPartLinks={setPartLinks} removeSelectedPart={removeSelectedPart} mobilePartNavBar={mobilePartNavBar} setMobilePartNavBar={setMobilePartNavBar} mobileNavBar={mobileNavBar} setMobileNavBar={setMobileNavBar}/>)
     }
     else if(viewState === 'checkout-page'){
         return(<CheckoutPage partLinks={partLinks} setPartLinks={setPartLinks} selectedParts={selectedParts} setSelectedParts={setSelectedParts} removeSelectedPart={removeSelectedPart}/>)
@@ -95,6 +113,9 @@ function renderViewState(){
 
 
     return (<div className="pc-builder-app-container">
+
+        {renderMobileNavBar()}
+        
         <div className="main-nav-bar-container">
             <div className="main-nav-bar-wrapper center-all">
                 <div className="main-nav-bar-button" onClick={() => {setViewState('part-selector')}}>Part Selector</div>
@@ -104,11 +125,11 @@ function renderViewState(){
             <button className="nav-view-cart-button" onClick={() => {setViewState('checkout-page')}} >View Cart</button>
         </div>
 
-        <div className="mobile-nav-bar-container">
-            <div className="mobile-nav-bar-wrapper">
+        <div className="mobile-header-container">
+            <div className="mobile-header-wrapper">
                 <div className="mobile-nav-bar-parts-button" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); }}><i class="fas fa-microchip" ></i></div>
 
-                <div className="mobile-nav-bar-menu-button"><i class="fas fa-bars"></i></div>
+                <div className="mobile-nav-bar-menu-button" onClick={() => { (mobileNavBar ? setMobileNavBar(false) : setMobileNavBar(true)); alert('clicked!') }}><i class="fas fa-bars"></i></div>
             </div>
 
         </div>

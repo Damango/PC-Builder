@@ -105,11 +105,7 @@ const PartSelector = (props) => {
         }
     }
 
-    function renderMobilePartModal(){
-        if(mobilePartModal) {
-            return ('')
-        }
-    }
+  
 
 
 
@@ -135,6 +131,7 @@ const PartSelector = (props) => {
 
 
     return (<div className="part-selector-container">
+       
         {renderMobilePartNavBar()}
         {renderPartModal()}
 

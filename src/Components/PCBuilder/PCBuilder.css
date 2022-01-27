@@ -42,7 +42,7 @@
 	transform: translateY(-50%);
 }
 
-.mobile-nav-bar-container {
+.mobile-header-container {
 	display: none;
 }
 
@@ -94,7 +94,7 @@
 		display: none;
 	}
 
-	.mobile-nav-bar-container {
+	.mobile-header-container {
 		display: block;
 		position: relative;
 		padding: 20px;
@@ -103,7 +103,7 @@
 		background-color: white;
 	}
 
-	.mobile-nav-bar-wrapper {
+	.mobile-header-wrapper {
 		position: absolute;
 		background-color: white;
 		height: 100%;

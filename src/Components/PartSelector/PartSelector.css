@@ -3,6 +3,7 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: 300px auto;
+	overflow-y: hidden;
 }
 
 .left-side-container {

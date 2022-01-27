@@ -40,13 +40,21 @@ const PartCard = (props) => {
         return(selected)
     }
 
+    function openPartModal(){
+        props.setPartModal(null)
+        setTimeout(() => {
+            props.setPartModal(props.data)
+        }, 1)
+       
+    }
 
 
+   
 
 
     return (<animated.div className={ renderSelectionStyle() + "part-card-container"} style={cardAnimation}>
-        <div className="part-card-wrapper"  onClick={() => { props.setPartModal(props.data) }}></div>
-        <div className="part-card-mobile-wrapper" onClick={() => { props.setPartModal(props.data) }}></div>
+        <div className="part-card-wrapper"  onClick={() => { openPartModal() }}></div>
+        <div className="part-card-mobile-wrapper" onClick={() => { openPartModal() }}></div>
         <div className="part-name">{props.data.name}</div>
        
         <div className="part-image center-x" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>

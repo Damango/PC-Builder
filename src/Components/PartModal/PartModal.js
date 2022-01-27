@@ -1,4 +1,5 @@
 import "./PartModal.css";
+import {useRef} from "react"
 import { useSpring, animated } from 'react-spring'
 
 import React from 'react';
@@ -11,10 +12,11 @@ const PartModal = (props) => {
     const mobileModalAnimation = useSpring({ from: { top: 800 }, to: { top: 0 }})
     const cardModalAnimation = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, immediate: true})
 
+    let partModalRef = useRef(null)
 
     function closeMobileModal(){
        
-        let mobileModal = document.querySelector('.part-modal-container');
+        let mobileModal = partModalRef.current
         mobileModal.style.transition = '0.5s'
         mobileModal.style.top = '900px'
        
@@ -25,14 +27,35 @@ const PartModal = (props) => {
     }
 
     console.log(props)
-    return (<animated.div className="part-modal-container" style={mobileModalAnimation} >
+    return (<animated.div className="part-modal-container" style={mobileModalAnimation} ref={partModalRef} >
+
+            
+
         <div className="mobile-part-modal-container">
         <button className="close-part-modal-button" onClick={() => { closeMobileModal() }}>X</button>
         <div className="part-modal-title">{props.data.name}</div>
             <div className="part-modal-price">${props.data.price}</div>
             <div className="part-modal-image" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>
             <button className="part-modal-select-button">Select +</button>
+            {props.data.highlights.map((highlight) => <div className="part-modal-highlight"> {highlight.key} <span className="highlight-value">{highlight.value}</span> </div>)}
+            {props.data.overView.map((row) =>  <div className="part-modal-table-row">
+                        <span className="row-type">
+                            <span>{row.key}</span>
+                        </span> 
+                        <span className="row-description">
+                            <span>{row.value}</span>
+                        </span>
+                    </div>)}
+        
         </div>
+
+
+
+
+
+
+
+
         <div className="part-modal-left-side">
             <div className="part-modal-title">{props.data.name}</div>
             <div className="part-modal-price">${props.data.price}</div>
