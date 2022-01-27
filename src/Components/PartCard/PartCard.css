@@ -52,6 +52,10 @@
 	z-index: 3;
 }
 
+.part-card-mobile-wrapper {
+	display: none;
+}
+
 .part-name {
 	text-align: center;
 	font-family: "Inter";
@@ -142,19 +146,8 @@
 	color: rgb(243, 227, 0);
 }
 
-@media only screen and (max-width: 1800px) {
-	.part-card-container {
-		min-width: 340px;
-	}
-
-	.selected-part-card-container {
-		min-width: 340px;
-	}
-}
-
 @media only screen and (max-width: 1770px) {
 	.part-card-container {
-		min-width: 330px;
 		min-height: 390px;
 	}
 
@@ -179,54 +172,45 @@
 	}
 
 	.selected-part-card-container {
-		min-width: 340px;
 	}
 }
 
 @media only screen and (max-width: 1750px) {
 	.part-card-container {
-		min-width: 300px;
 		min-height: 390px;
 	}
 
 	.selected-part-card-container {
-		min-width: 300px;
 		min-height: 390px;
 	}
 }
 
 @media only screen and (max-width: 1600px) {
 	.part-card-container {
-		min-width: 280px;
 		min-height: 390px;
 	}
 
 	.selected-part-card-container {
-		min-width: 280px;
 		min-height: 390px;
 	}
 }
 
 @media only screen and (max-width: 1530px) {
 	.part-card-container {
-		min-width: 260px;
 		min-height: 390px;
 	}
 
 	.selected-part-card-container {
-		min-width: 260px;
 		min-height: 390px;
 	}
 }
 
 @media only screen and (max-width: 1400px) {
 	.part-card-container {
-		min-width: 240px;
 		min-height: 390px;
 	}
 
 	.seleceted-part-card-container {
-		min-width: 240px;
 		min-height: 390px;
 	}
 
@@ -238,12 +222,10 @@
 
 @media only screen and (max-width: 1328px) {
 	.part-card-container {
-		min-width: 310px;
 		min-height: 380px;
 	}
 
 	.seleceted-part-card-container {
-		min-width: 310px;
 		min-height: 380px;
 	}
 
@@ -255,24 +237,86 @@
 
 @media only screen and (max-width: 1328px) {
 	.part-card-container {
-		min-width: 295px;
 		min-height: 380px;
 	}
 
 	.seleceted-part-card-container {
-		min-width: 295px;
 		min-height: 380px;
 	}
 }
 
 @media only screen and (max-width: 1230px) {
 	.part-card-container {
-		min-width: 280px;
 		min-height: 380px;
 	}
 
 	.seleceted-part-card-container {
-		min-width: 280px;
 		min-height: 380px;
+	}
+}
+
+@media only screen and (max-width: 428px) {
+	.part-card-container {
+		min-width: 120px;
+		min-height: 290px;
+	}
+
+	/*.part-card-mobile-wrapper {
+		display: inline-block;
+		position: absolute;
+		background-color: transparent;
+		top: 0px;
+		left: 0px;
+
+		width: 100%;
+		height: 100%;
+		padding: 15px;
+		box-sizing: border-box;
+		z-index: 3;
+	}*/
+	.part-card-wrapper {
+	}
+
+	.part-name {
+		font-size: 12px;
+	}
+
+	.part-image {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 15px;
+	}
+
+	.feature-tag {
+		font-size: 8px !important;
+	}
+
+	.part-price {
+		font-size: 12px;
+	}
+	.part-rating {
+		margin-bottom: 0px;
+	}
+
+	.rating-stars {
+		font-size: 10px;
+	}
+	.rating-count {
+		font-size: 10px;
+	}
+
+	.select-button {
+		font-size: 12px;
+		padding: 4px;
+	}
+
+	.selected-select-button {
+		font-size: 12px;
+		padding: 4px;
+	}
+
+	.selected-part-card-container {
+		min-width: 120px;
+		min-height: 290px;
 	}
 }

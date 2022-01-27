@@ -48,6 +48,7 @@ const PartSelector = (props) => {
 
     const [partView, setPartView] = useState(props.partLinks[0])
     const [partModal, setPartModal] = useState(false)
+    const [mobilePartModal, setMobilePartModal] = useState(false)
 
     function changePartView(index) {
 
@@ -104,6 +105,12 @@ const PartSelector = (props) => {
         }
     }
 
+    function renderMobilePartModal(){
+        if(mobilePartModal) {
+            return ('')
+        }
+    }
+
 
 
     function renderMobilePartNavBar(){
@@ -147,7 +154,7 @@ const PartSelector = (props) => {
                 <div className="part-search-bar "><i class="fas fa-search"></i> Search</div>
             </div>
             <div className="parts-list-container">
-                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={props.selectedParts} setPartModal={setPartModal} key={index} />)}
+                {partView.parts.map((part, index) => <PartCard checkPartList={checkPartList} data={part} index={index} partView={partView} listUpdater={listUpdater} selectedParts={props.selectedParts} setPartModal={setPartModal} mobilePartModal={mobilePartModal} setMobilePartModal={setMobilePartModal} key={index} />)}
             </div>
         </div>
 

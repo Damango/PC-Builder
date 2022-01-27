@@ -46,6 +46,7 @@ const PartCard = (props) => {
 
     return (<animated.div className={ renderSelectionStyle() + "part-card-container"} style={cardAnimation}>
         <div className="part-card-wrapper"  onClick={() => { props.setPartModal(props.data) }}></div>
+        <div className="part-card-mobile-wrapper" onClick={() => { props.setPartModal(props.data) }}></div>
         <div className="part-name">{props.data.name}</div>
        
         <div className="part-image center-x" style={{ backgroundImage: `url(${props.data.imageURL})` }}></div>

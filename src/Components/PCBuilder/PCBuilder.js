@@ -105,12 +105,11 @@ function renderViewState(){
         </div>
 
         <div className="mobile-nav-bar-container">
-            <div className="mobile-nav-bar-parts-button"><i class="fas fa-microchip" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); }}></i></div>
+            <div className="mobile-nav-bar-wrapper">
+                <div className="mobile-nav-bar-parts-button" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); }}><i class="fas fa-microchip" ></i></div>
 
-            
-
-
-            <div className="mobile-nav-bar-menu-button"><i class="fas fa-bars"></i></div>
+                <div className="mobile-nav-bar-menu-button"><i class="fas fa-bars"></i></div>
+            </div>
 
         </div>
 

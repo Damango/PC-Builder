@@ -102,4 +102,15 @@
 		border-bottom: 1px solid gray;
 		background-color: white;
 	}
+
+	.mobile-nav-bar-wrapper {
+		position: absolute;
+		background-color: white;
+		height: 100%;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+		padding: 20px;
+		box-sizing: border-box;
+	}
 }

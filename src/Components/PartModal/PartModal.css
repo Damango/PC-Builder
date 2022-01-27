@@ -153,6 +153,42 @@
 	transform: translateY(-50%);
 }
 
+.mobile-part-modal-container {
+	display: none;
+}
+
+.mobile-part-modal-container .close-part-modal-button {
+	position: absolute;
+	padding: 20px;
+}
+
+@media only screen and (max-width: 428px) {
+	.part-modal-container {
+		position: absolute !important;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: red;
+		top: unset;
+		transform: unset;
+	}
+	.mobile-part-modal-container {
+		position: relative;
+		display: block;
+		height: 100%;
+		width: 100vw;
+		background-color: white;
+	}
+
+	.part-modal-left-side {
+		display: none;
+	}
+	.part-modal-right-side {
+		display: none;
+	}
+}
+
 /* width */
 ::-webkit-scrollbar {
 	width: 10px;
