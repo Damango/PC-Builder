@@ -64,6 +64,7 @@ const PartModal = (props) => {
         </div>
 
         <div className="part-modal-right-side">
+        <button className="close-part-modal-button" onClick={() => { props.setPartModal(null) }}>X</button>
            
             <div className="part-modal-table-header">Specs</div>
             <div className="part-modal-highlights-container">

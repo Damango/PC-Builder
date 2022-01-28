@@ -82,20 +82,30 @@ function removeSelectedPart(index){
     setSelectedParts(newSelectedParts)
 }
 
+function mobileNavBarStyles(page) {
+    if(page === viewState){
+        return('-active')
+    }
+    else{
+        return('')
+    }
+}
+
 
 function renderMobileNavBar(){
     if(mobileNavBar){
-        <div className="mobile-nav-bar-wrapper">
-            <div className="mobile-nav-bar-container">
-                <div className="mobile-nav-overlay" onClick={() => {setMobileNavBar(false)}}></div>
-                <div className="mobile-nav-links-container">
-                    <div className="mobile-nav-link" onClick={() => {setViewState('part-selector')}}>Part Selector</div>
-                    <div className="mobile-nav-link" >Community Builds</div>
-                    <div className="mobile-nav-link" >Finished Builds</div>
-                    <div className="mobile-nav-link" onClick={() => {setViewState('checkout-page')}}>View Cart</div>
-                </div>
+        return( <div className="mobile-nav-bar-wrapper">
+        <div className="mobile-nav-bar-container">
+            <div className="mobile-nav-overlay" onClick={() => {setMobileNavBar(false)}}></div>
+            <div className="mobile-nav-links-container">
+                <div className={"mobile-nav-link" + mobileNavBarStyles('part-selector')} onClick={() => {setViewState('part-selector')}}>Part Selector</div>
+                <div className={"mobile-nav-link" + mobileNavBarStyles('community')} >Community Builds</div>
+                <div className={"mobile-nav-link" + mobileNavBarStyles('completed')} >Finished Builds</div>
+                <div className={"mobile-nav-link" + mobileNavBarStyles('checkout-page')} onClick={() => {setViewState('checkout-page')}}>View Cart</div>
             </div>
         </div>
+    </div>)
+       
     }
 }
 
@@ -127,9 +137,9 @@ function renderViewState(){
 
         <div className="mobile-header-container">
             <div className="mobile-header-wrapper">
-                <div className="mobile-nav-bar-parts-button" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true)); }}><i class="fas fa-microchip" ></i></div>
+                <div className="mobile-nav-bar-parts-button" onClick={() => { (mobilePartNavBar ? setMobilePartNavBar(false) : setMobilePartNavBar(true));  }}><i class="fas fa-microchip" ></i></div>
 
-                <div className="mobile-nav-bar-menu-button" onClick={() => { (mobileNavBar ? setMobileNavBar(false) : setMobileNavBar(true)); alert('clicked!') }}><i class="fas fa-bars"></i></div>
+                <div className="mobile-nav-bar-menu-button" onClick={() => { (mobileNavBar ? setMobileNavBar(false) : setMobileNavBar(true));console.log('clicked' + ' ' + mobileNavBar) }}><i class="fas fa-bars"></i></div>
             </div>
 
         </div>
