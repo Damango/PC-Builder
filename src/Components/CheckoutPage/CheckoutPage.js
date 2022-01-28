@@ -31,17 +31,42 @@ const CheckoutPage = (props) => {
 
     function renderItemSections2(){
 
-        let checkoutArray = []
-
-
-   
-
-        return(checkoutParts[0].map((part, index) => <div className="checkout-page-part-wrapper">
+        let checkoutArray = checkoutParts[0].map((part, index) => <div className="checkout-page-part-wrapper">
            
-            <div className="checkout-page-part-header">{part.partCategory.toUpperCase()}</div>
-            <div className="checkout-page-part-container" onClick={() => {props.setViewState({view:'part-selector', index:index})}}>SELECT PART +</div>
+        <div className="checkout-page-part-header">{part.partCategory.toUpperCase()}</div>
+        <div className="checkout-page-part-container" onClick={() => {props.setViewState({view:'part-selector', index:index})}}>SELECT PART +</div>
         
-        </div>))
+        </div>)
+
+
+
+     
+
+        
+
+        let i, j;
+        for(i = 0; i < checkoutParts[0].length; i++){
+            for(j = 0; j < props.selectedParts.length; j++){
+                if(checkoutParts[0][i].partCategory === props.selectedParts[j].item.type){
+
+                    checkoutArray[i] = <div className="checkout-page-part-wrapper">
+           
+                        <div className="checkout-page-part-header">{props.selectedParts[j].item.type.toUpperCase()}</div>
+                        <div className="checkout-page-part-container" >
+                            {props.selectedParts[j].item.name}
+                        </div>
+                    
+                    </div>
+                }
+            }
+            
+        }
+
+        console.log(checkoutArray)
+
+       
+
+        return(checkoutArray)
         
     }
 
