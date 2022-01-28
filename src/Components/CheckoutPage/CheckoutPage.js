@@ -6,33 +6,80 @@ import "./CheckoutPage.css"
 const CheckoutPage = (props) => {
 
 
+    useEffect(() => {
+
+    }, [])
+
+
+
+    const checkoutParts = useState(props.partLinks);
+
 
     function calculateTotal(){
         let total = 0;
         let i;
         for(i = 0; i < props.selectedParts.length; i++){
             total += props.selectedParts[i].item.price
-            console.log(total)
+            //console.log(total)
         }
 
-        console.log(props.selectedParts)
+        //console.log(props.selectedParts)
 
         return (total)
     }
 
+
+    function renderItemSections2(){
+
+        let checkoutArray = []
+
+
+   
+
+        return(checkoutParts[0].map((part, index) => <div className="checkout-page-part-wrapper">
+           
+            <div className="checkout-page-part-header">{part.partCategory.toUpperCase()}</div>
+            <div className="checkout-page-part-container" onClick={() => {props.setViewState({view:'part-selector', index:index})}}>SELECT PART +</div>
+        
+        </div>))
+        
+    }
+
     function renderItemSections(){
-        console.log(props.selectedParts)
+       // console.log(props.selectedParts)
         let i, j;
 
         let sectionArray = [];
         for(i = 0; i < props.partLinks.length; i++){
             if(!props.partLinks[i].selected){
-                sectionArray.push(<div className="checkout-page-part-container">PICK A PART</div>)
+                sectionArray.push(<div className="checkout-page-part-wrapper">
+                    <div className="checkout-page-part-header">{props.partLinks[i].partCategory.toUpperCase()}</div>
+                    <div className="checkout-page-part-container">SELECT PART +</div>
+                    
+                    </div>)
             }
             else{
                 for(j = 0; j < props.selectedParts.length; j++){
                     if(props.selectedParts[j].item.type === props.partLinks[i].partCategory){
-                        sectionArray.push(<div className="checkout-page-part-container">TEST</div>)
+                        sectionArray.push(<div className="checkout-page-part-wrapper">
+                             <div className="checkout-page-part-header">{props.partLinks[i].partCategory.toUpperCase()}</div>
+                             <div className="checkout-page-part-container">
+                    <div className="checkout-page-part-image-container">
+                        <div className="checkout-page-part-image"style={{ backgroundImage: `url(${props.selectedParts[j].item.imageURL})` }}></div>
+                    </div>
+                    <div className="checkout-page-part-details-wrapper">
+                        <div className="checkout-page-part-name">{props.selectedParts[j].item.name}</div>
+                        <div className="checkout-page-part-highlights-container">
+                            {props.selectedParts[j].item.highlights.map((highlight, index) => <div className="checkout-page-part-highlight">{highlight.key +':' + " " +highlight.value}</div>)}
+                        </div>
+                    </div>
+                    <div className="checkout-page-part-price">
+                        <div className="checkout-page-part-price-amount">${props.selectedParts[j].item.price}</div>
+                    </div> 
+                    <button className="checkout-page-remove-button" onClick={() => {sectionArray[j - 1] = (<div>OK</div>); props.removeSelectedPart(j - 1); console.log(props.selectedParts)}}>REMOVE</button>
+                </div>
+                </div>
+                        )
                     }
                 }
             }
@@ -45,9 +92,9 @@ const CheckoutPage = (props) => {
 
 
 
-    console.log(props)
+    
     return ( <div className="checkout-page-container">
-        <button onClick={renderItemSections}>CLICK ME</button>
+       
        <div className="checkout-page-parts-list-container">
            <div className="checkout-page-parts-list-header">Shopping Cart ({props.selectedParts.length})</div>
 
@@ -56,13 +103,13 @@ const CheckoutPage = (props) => {
 
 
           
-            {renderItemSections()}
+            {renderItemSections2()}
 
 
 
 
 
-
+ 
            </div>
 
 
@@ -110,7 +157,7 @@ export default CheckoutPage;
                     </div>
                     <div className="checkout-page-part-price">
                         <div className="checkout-page-part-price-amount">${part.item.price}</div>
-                    </div>
+                    </div> 
                     <button className="checkout-page-remove-button" onClick={() => {props.removeSelectedPart(index); console.log(index)}}>REMOVE</button>
                 </div>)}
 

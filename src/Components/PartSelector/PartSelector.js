@@ -35,6 +35,9 @@ const PartSelector = (props) => {
             
     }
 
+
+    
+
     props.setPartLinks(thePartLinks)
     console.log(props.partLinks)
     console.log(props.selectedParts)
@@ -46,7 +49,7 @@ const PartSelector = (props) => {
 
  
 
-    const [partView, setPartView] = useState(props.partLinks[0])
+    const [partView, setPartView] = useState(props.partLinks[(props.viewIndex ? props.viewIndex : 0)])
     const [partModal, setPartModal] = useState(false)
     const [mobilePartModal, setMobilePartModal] = useState(false)
 
@@ -104,6 +107,7 @@ const PartSelector = (props) => {
             return <PartModal data={partModal} setPartModal={setPartModal} />
         }
     }
+
 
   
 

@@ -180,3 +180,14 @@
 	font-size: 20px;
 	font-weight: 600;
 }
+
+@media only screen and (max-width: 1230px) {
+	.checkout-page-container {
+	}
+	.checkout-page-parts-list-container {
+	}
+
+	.checkout-page-parts-list-header {
+		font-size: 20px;
+	}
+}
