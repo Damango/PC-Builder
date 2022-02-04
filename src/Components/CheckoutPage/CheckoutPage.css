@@ -5,6 +5,7 @@
 	height: 100%;
 	box-sizing: border-box;
 	padding: 30px;
+	overflow-y: hidden;
 }
 
 .checkout-page-parts-list-container {
@@ -18,7 +19,6 @@
 	font-weight: bold;
 }
 .checkout-page-parts-list-wrapper {
-	margin-top: 20px;
 }
 
 .checkout-page-part-container {
@@ -37,8 +37,31 @@
 	width: 100px;
 	height: 100px;
 	display: inline-block;
+}
 
-	float: left;
+.mobile-checkout-button {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: blue;
+	box-sizing: border-box;
+	padding: 10px;
+	display: none;
+	text-align: center;
+	color: white;
+}
+
+.close-summary-button {
+	position: absolute;
+	top: 0px;
+	background-color: purple;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6px;
+	left: 0px;
+	text-align: center;
+	display: none;
 }
 
 .checkout-page-part-image {
@@ -189,5 +212,26 @@
 
 	.checkout-page-parts-list-header {
 		font-size: 20px;
+	}
+
+	.checkout-page-summary-container {
+		position: absolute;
+		padding: unset;
+		width: 100%;
+		height: 10px !important;
+		top: unset;
+		bottom: 0px;
+		left: 0px;
+		transform: unset;
+		padding: 30px;
+		transition: all 0.3s;
+	}
+
+	.mobile-checkout-button {
+		display: inline-block;
+	}
+
+	.close-summary-button {
+		display: inline-block;
 	}
 }
