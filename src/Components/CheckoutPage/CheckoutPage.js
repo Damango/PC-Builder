@@ -64,14 +64,16 @@ const CheckoutPage = (props) => {
 	}
 
 	function handleMobileCheckout() {
-		console.log("test");
 		let mobileCheck = document.querySelector(".mobile-checkout-button");
-		if (mobileCheck && mobileSummary) {
-			setMobileSummary(false);
-			mobileSummaryElement.current.style.bottom = "0%";
-		} else if (mobileCheck && !mobileSummary) {
-			mobileSummaryElement.current.style.bottom = "-100%";
-			setMobileSummary(true);
+
+		if (mobileCheck) {
+			if (mobileSummary) {
+				setMobileSummary(false);
+				mobileSummaryElement.current.style.bottom = "-100%";
+			} else if (mobileSummary === false) {
+				mobileSummaryElement.current.style.bottom = "0%";
+				setMobileSummary(true);
+			}
 		}
 	}
 

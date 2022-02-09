@@ -220,7 +220,7 @@
 		width: 100%;
 		height: 10px !important;
 		top: unset;
-		bottom: 0px;
+		bottom: -100%;
 		left: 0px;
 		transform: unset;
 		padding: 30px;
