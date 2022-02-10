@@ -21,7 +21,7 @@
 .main-nav-bar-wrapper {
 	position: relative;
 
-	width: 400px;
+	width: 550px;
 
 	display: flex;
 
@@ -29,10 +29,22 @@
 }
 
 .main-nav-bar-button {
+	position: relative;
 	display: inline-block;
-	background-color: red;
+	font-family: "Inter";
+	font-weight: bold;
+	background-color: transparent;
 	box-sizing: border-box;
-	padding: 10px;
+
+	padding: 15px;
+	transition: all 0.3s;
+	border-radius: 3px;
+}
+
+.main-nav-bar-button:hover {
+	cursor: pointer;
+	background-color: #2f3640;
+	color: white;
 }
 
 .nav-view-cart-button {
@@ -40,6 +52,18 @@
 	right: 20px;
 	top: 50%;
 	transform: translateY(-50%);
+	background-color: #256aff;
+	color: white;
+	padding: 10px 20px;
+	font-size: 18px;
+	border-style: none;
+	border-radius: 3px;
+	transition: all 0.3s;
+}
+
+.nav-view-cart-button:hover {
+	cursor: pointer;
+	background-color: #2f21f1;
 }
 
 .mobile-header-container {
