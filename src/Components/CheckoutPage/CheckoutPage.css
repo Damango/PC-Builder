@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	padding: 30px;
 	overflow-y: hidden;
+	max-width: 100vw;
 }
 
 .checkout-page-parts-list-container {
@@ -17,6 +18,8 @@
 .checkout-page-parts-list-header {
 	font-size: 30px;
 	font-weight: bold;
+	margin-top: -20px;
+	margin-bottom: 20px;
 }
 .checkout-page-parts-list-wrapper {
 }
@@ -29,6 +32,7 @@
 	box-sizing: border-box;
 	border-radius: 3px;
 	margin-bottom: 20px;
+	display: flex;
 }
 
 .checkout-page-part-image-container {
@@ -62,6 +66,13 @@
 	left: 0px;
 	text-align: center;
 	display: none;
+}
+
+.checkout-page-part-header {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-family: "Inter";
+	font-weight: 600;
 }
 
 .checkout-page-part-image {
@@ -104,14 +115,14 @@
 }
 
 .checkout-page-part-price {
-	position: relative;
-	height: 100%;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 	font-family: "Open Sans";
 	font-weight: bold;
 	font-size: 22px;
 	color: #2f3640;
 	text-align: right;
-	float: right;
 }
 
 .checkout-page-remove-button {
@@ -208,10 +219,35 @@
 	.checkout-page-container {
 	}
 	.checkout-page-parts-list-container {
+		width: 100%;
 	}
 
 	.checkout-page-parts-list-header {
 		font-size: 20px;
+	}
+
+	.checkout-page-part-image-container {
+		height: 100px;
+	}
+
+	.checkout-page-part-name {
+		font-size: 12px;
+	}
+
+	.checkout-page-part-highlights-container {
+		font-size: 11px;
+	}
+
+	.checkout-page-part-price {
+		font-size: 12px;
+	}
+
+	.checkout-page-remove-button {
+		font-size: 10px;
+	}
+
+	.checkout-page-part-container {
+		position: relative;
 	}
 
 	.checkout-page-summary-container {
@@ -233,5 +269,25 @@
 
 	.close-summary-button {
 		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 428px) {
+	.checkout-page-part-name {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 18px;
+	}
+
+	.checkout-page-part-price {
+		font-size: 16px;
+	}
+	.checkout-page-part-image-container {
+		width: 75px;
+		height: 50px;
+	}
+	.checkout-page-part-highlights-container {
+		display: none;
 	}
 }

@@ -27,6 +27,7 @@ const CheckoutPage = (props) => {
 				<div className="checkout-page-part-header">
 					{part.partCategory.toUpperCase()}
 				</div>
+
 				<div
 					className="checkout-page-part-container"
 					onClick={() => {
@@ -49,16 +50,49 @@ const CheckoutPage = (props) => {
 							<div className="checkout-page-part-header">
 								{props.selectedParts[j].item.type.toUpperCase()}
 							</div>
+
 							<div className="checkout-page-part-container">
-								{props.selectedParts[j].item.name}
+								<div className="checkout-page-part-image-container">
+									<div
+										className="checkout-page-part-image"
+										style={{
+											backgroundImage: `url(${props.selectedParts[j].item.imageURL})`,
+										}}
+									></div>
+								</div>
+								<div className="checkout-page-part-details-wrapper">
+									<div className="checkout-page-part-name">
+										{props.selectedParts[j].item.name}
+									</div>
+									<div className="checkout-page-part-highlights-container">
+										{props.selectedParts[j].item.highlights.map(
+											(highlight, index) => (
+												<div className="checkout-page-part-highlight">
+													{highlight.key + ":" + " " + highlight.value}
+												</div>
+											)
+										)}
+									</div>
+								</div>
+								<div className="checkout-page-part-price">
+									<div className="checkout-page-part-price-amount">
+										${props.selectedParts[j].item.price}
+									</div>
+								</div>
+								<button
+									className="checkout-page-remove-button"
+									onClick={() => {
+										props.removeSelectedPart(j - 1);
+									}}
+								>
+									REMOVE
+								</button>
 							</div>
 						</div>
 					);
 				}
 			}
 		}
-
-		console.log(checkoutArray);
 
 		return checkoutArray;
 	}

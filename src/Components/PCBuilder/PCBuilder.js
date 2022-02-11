@@ -62,12 +62,12 @@ const PCBuilder = () => {
 		let newSelectedParts = [...selectedParts];
 		console.log(index);
 		newSelectedParts.splice(index, 1);
-		//console.log(newSelectedParts)
+
 		setSelectedParts(newSelectedParts);
 	}
 
 	function mobileNavBarStyles(page) {
-		if (page === viewState) {
+		if (page === viewState || page === viewState.view) {
 			return "-active";
 		} else {
 			return "";
