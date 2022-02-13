@@ -2,10 +2,15 @@ import React from "react";
 import "./PCBuilder.css";
 import PartSelector from "../PartSelector/PartSelector";
 import CheckoutPage from "../CheckoutPage/CheckoutPage";
+
+// Part Data and Images
 import cpuParts from "../../data/cpuparts.js";
 import motherBoardParts from "../../data/motherboardparts";
 import graphicsCardParts from "../../data/graphicscardparts";
 import memoryParts from "../../data/memoryparts";
+import powerSupplies from "../../data/powersupply";
+import cases from "../../data/cases";
+
 import { useState } from "react";
 const PCBuilder = () => {
 	const [viewState, setViewState] = useState("part-selector");
@@ -38,12 +43,12 @@ const PCBuilder = () => {
 		},
 		{
 			partCategory: "power supply",
-			parts: graphicsCardParts,
+			parts: powerSupplies,
 			selected: false,
 		},
 		{
 			partCategory: "case",
-			parts: graphicsCardParts,
+			parts: cases,
 			selected: false,
 		},
 		{
