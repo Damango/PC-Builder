@@ -179,13 +179,7 @@ const PartSelector = (props) => {
 					</div>
 					<div className="part-search-bar ">
 						<span>Sort By</span>
-						<button
-							onClick={() => {
-								console.log(sortSelection);
-							}}
-						>
-							C
-						</button>
+
 						<DropDownMenu
 							dropDownOptions={["Price", "Alphabetical", "Rating"]}
 							setSortSelection={setSortSelection}
