@@ -18,7 +18,7 @@ const CheckoutPage = (props) => {
 			total += props.selectedParts[i].item.price;
 		}
 
-		return total;
+		return Math.round(total * 100) / 100;
 	}
 
 	function renderItemSections() {
@@ -138,7 +138,7 @@ const CheckoutPage = (props) => {
 						{props.selectedParts.map((part) => (
 							<div className="item-summary-item">
 								<span>{part.item.name}</span>
-								<span>{part.item.price}</span>
+								<span>${part.item.price}</span>
 							</div>
 						))}
 					</div>
@@ -146,7 +146,7 @@ const CheckoutPage = (props) => {
 				<div className="summary-footer">
 					<div className="summary-footer-total-and-count">
 						<span>Item(s): {props.selectedParts.length}</span>
-						<span>{calculateTotal()}</span>
+						<span>${calculateTotal()}</span>
 					</div>
 					<button className="checkout-button">CHECKOUT</button>
 				</div>

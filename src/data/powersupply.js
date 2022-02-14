@@ -4,8 +4,8 @@ import evga750 from "../media/evga750.jpg";
 
 const powerSupplies = [
 	{
-		name: "Corsair D500 Obsidian",
-		type: "case",
+		name: "Corsair RMX 1000x",
+		type: "power supply",
 		imageURL: corsairrmx1000x,
 		price: 200.58,
 		rating: 5,
@@ -39,8 +39,8 @@ const powerSupplies = [
 		],
 	},
 	{
-		name: "Corsair 4000D",
-		type: "case",
+		name: "Corsair RMX 850x",
+		type: "power supply",
 		imageURL: corsairrmx850x,
 		price: 74.99,
 		rating: 5,
@@ -75,7 +75,7 @@ const powerSupplies = [
 	},
 	{
 		name: "Cooler Master Elite 500",
-		type: "case",
+		type: "power supply",
 		imageURL: corsairrmx850x,
 		price: 200.58,
 		rating: 5,
@@ -109,16 +109,16 @@ const powerSupplies = [
 		],
 	},
 	{
-		name: "Corsair iCUE 4000x",
-		type: "case",
+		name: "EVGA 750",
+		type: "power supply",
 		imageURL: evga750,
 		price: 200.58,
 		rating: 5,
 		ratingCount: 202,
 		highlights: [
 			{
-				key: "Size",
-				value: "Super Tower",
+				key: "Wattage",
+				value: "750W",
 			},
 			{
 				key: "Core Count",
@@ -145,7 +145,7 @@ const powerSupplies = [
 	},
 	{
 		name: "NZXT H510",
-		type: "case",
+		type: "power supply",
 		imageURL: corsairrmx850x,
 		price: 89.99,
 		rating: 5,
@@ -180,7 +180,7 @@ const powerSupplies = [
 	},
 	{
 		name: "MSI Forge 100R",
-		type: "case",
+		type: "power supply",
 		imageURL: corsairrmx850x,
 		price: 89.99,
 		rating: 5,
@@ -215,7 +215,7 @@ const powerSupplies = [
 	},
 	{
 		name: "Thermaltake W200",
-		type: "case",
+		type: "power supply",
 		imageURL: corsairrmx850x,
 		price: 89.99,
 		rating: 5,

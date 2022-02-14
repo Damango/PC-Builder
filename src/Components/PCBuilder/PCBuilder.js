@@ -8,6 +8,7 @@ import cpuParts from "../../data/cpuparts.js";
 import motherBoardParts from "../../data/motherboardparts";
 import graphicsCardParts from "../../data/graphicscardparts";
 import memoryParts from "../../data/memoryparts";
+import storageParts from "../../data/storageparts";
 import powerSupplies from "../../data/powersupply";
 import cases from "../../data/cases";
 
@@ -38,7 +39,7 @@ const PCBuilder = () => {
 		},
 		{
 			partCategory: "storage",
-			parts: graphicsCardParts,
+			parts: storageParts,
 			selected: false,
 		},
 		{

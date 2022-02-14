@@ -4,6 +4,8 @@ import PartCard from "../PartCard/PartCard";
 import PartNavLink from "../PartNavLink/PartNavLink";
 import PartModal from "../PartModal/PartModal";
 
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
+
 import { render } from "@testing-library/react";
 
 const PartSelector = (props) => {
@@ -27,6 +29,7 @@ const PartSelector = (props) => {
 		}
 
 		props.setPartLinks(thePartLinks);
+		handlePartSorting("Price");
 		console.log(partView);
 	}, []);
 
@@ -35,6 +38,25 @@ const PartSelector = (props) => {
 	);
 	const [partModal, setPartModal] = useState(false);
 	const [mobilePartModal, setMobilePartModal] = useState(false);
+
+	const [sortSelection, setSortSelection] = useState("Price");
+
+	function handlePartSorting(selection) {
+		let partsList = [...partView.parts];
+
+		if (selection === "Price") {
+			partsList.sort((a, b) => (a.price > b.price ? 1 : -1));
+			console.log("PRICE");
+		} else if (selection === "Alphabetical") {
+			partsList.sort((a, b) => (a.name > b.name ? 1 : -1));
+			console.log("ALPHABET");
+		} else if (selection === "Rating") {
+			partsList.sort((a, b) => (a.ratingCount > b.ratingCount ? 1 : -1));
+			console.log("RATING");
+		}
+
+		setPartView({ parts: partsList, partCategory: partView.partCategory });
+	}
 
 	function changePartView(index) {
 		setPartView({ parts: [], partCategory: "" });
@@ -156,7 +178,19 @@ const PartSelector = (props) => {
 						{partView.partCategory.toUpperCase()}
 					</div>
 					<div className="part-search-bar ">
-						<i class="fas fa-search"></i> Search
+						<span>Sort By</span>
+						<button
+							onClick={() => {
+								console.log(sortSelection);
+							}}
+						>
+							C
+						</button>
+						<DropDownMenu
+							dropDownOptions={["Price", "Alphabetical", "Rating"]}
+							setSortSelection={setSortSelection}
+							handlePartSorting={handlePartSorting}
+						/>
 					</div>
 				</div>
 				<div className="parts-list-container">
