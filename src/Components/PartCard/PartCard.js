@@ -10,12 +10,11 @@ const PartCard = (props) => {
 		delay: props.index * 100,
 	});
 
-	const [partSelected, setPartSelected] = useState("");
-
 	function addPartToList() {
 		props.listUpdater("insert", props.data);
-		setPartSelected("selected-");
 		props.checkPartList(props.partView);
+
+		console.log(props.partView);
 	}
 
 	function renderSelectionStyle() {

@@ -263,9 +263,22 @@
 	}
 }
 
+@media only screen and (max-width: 700px) {
+	.part-search-bar span {
+		font-size: 12px;
+	}
+	.part-list-category {
+		font-size: 25px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.part-list-category {
+		font-size: 20px;
+	}
+}
 @media only screen and (max-width: 428px) {
 	.parts-list-container {
-		/*grid-template-columns: auto auto;*/
 		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	}
 }

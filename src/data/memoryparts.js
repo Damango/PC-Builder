@@ -4,7 +4,7 @@ import corsairvengance from "../media/corsairvengance.png";
 
 let memoryParts = [
 	{
-		name: "Intel Core i9-9700K",
+		name: "Hyper X Fury",
 		type: "memory",
 		imageURL: hyperx1,
 		price: 439.99,
@@ -12,12 +12,12 @@ let memoryParts = [
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "16 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
 				key: "Thread Count",
@@ -39,20 +39,20 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i7-9100K",
+		name: "Corsair Dominator Platinum",
 		imageURL: dominator,
 		type: "memory",
-		price: 739.99,
+		price: 207.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "32 GB",
 			},
 			{
-				key: "Core Count",
-				value: "6 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
 				key: "Thread Count",
@@ -86,7 +86,7 @@ let memoryParts = [
 				value: "16 GB",
 			},
 			{
-				key: "memory Type",
+				key: "Memory Type",
 				value: "DDR4",
 			},
 			{
@@ -109,20 +109,20 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-9300K",
+		name: "Corsair Dominator",
 		type: "memory",
 		imageURL: dominator,
-		price: 439.99,
+		price: 133.94,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "16 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
 				key: "Thread Count",
@@ -179,7 +179,7 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-9000K",
+		name: "Corsair Dominator 2",
 		type: "memory",
 		imageURL: dominator,
 		price: 439.99,
@@ -214,10 +214,10 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-1600K",
+		name: "HyperX Kingston",
 		type: "memory",
 		imageURL: hyperx1,
-		price: 439.99,
+		price: 79.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
@@ -249,7 +249,7 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-9800K",
+		name: "Corsair Vengenace LPX",
 		type: "memory",
 		imageURL: dominator,
 		price: 439.99,
@@ -284,7 +284,7 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-97500K",
+		name: "Corsair Vengenace PRO",
 		type: "memory",
 		imageURL: corsairvengance,
 		price: 439.99,
@@ -319,7 +319,7 @@ let memoryParts = [
 		],
 	},
 	{
-		name: "Intel Core i9-97400K",
+		name: "Corsair Vengenace RGB",
 		type: "memory",
 		imageURL: corsairvengance,
 		price: 439.99,

@@ -277,6 +277,12 @@
 }
 
 @media only screen and (max-width: 428px) {
+	.checkout-page-parts-list-container {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 110%;
+	}
 	.checkout-page-part-name {
 		position: relative;
 		top: 50%;

@@ -44,6 +44,8 @@ const PartSelector = (props) => {
 	function handlePartSorting(selection) {
 		let partsList = [...partView.parts];
 
+		let partViewObject = partView;
+
 		if (selection === "Price") {
 			partsList.sort((a, b) => (a.price > b.price ? 1 : -1));
 			console.log("PRICE");
@@ -55,7 +57,12 @@ const PartSelector = (props) => {
 			console.log("RATING");
 		}
 
-		setPartView({ parts: partsList, partCategory: partView.partCategory });
+		partViewObject.parts = partsList;
+
+		console.log(partView);
+		console.log(props.partLinks[0]);
+
+		setPartView(partViewObject);
 	}
 
 	function changePartView(index) {
@@ -93,12 +100,19 @@ const PartSelector = (props) => {
 		let theIndex = newList.indexOf(object);
 		newList[theIndex].selected = true;
 		props.setPartLinks(newList);
-		console.log(props.partLinks);
 	}
 
 	function renderPartModal() {
 		if (partModal) {
-			return <PartModal data={partModal} setPartModal={setPartModal} />;
+			return (
+				<PartModal
+					data={partModal}
+					setPartModal={setPartModal}
+					checkPartList={checkPartList}
+					listUpdater={listUpdater}
+					partView={partView}
+				/>
+			);
 		}
 	}
 
@@ -191,10 +205,10 @@ const PartSelector = (props) => {
 					{partView.parts.map((part, index) => (
 						<PartCard
 							checkPartList={checkPartList}
+							listUpdater={listUpdater}
 							data={part}
 							index={index}
 							partView={partView}
-							listUpdater={listUpdater}
 							selectedParts={props.selectedParts}
 							setPartModal={setPartModal}
 							mobilePartModal={mobilePartModal}
