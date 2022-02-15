@@ -62,7 +62,9 @@ const PartSelector = (props) => {
 		console.log(partView);
 		console.log(props.partLinks[0]);
 
-		setPartView(partViewObject);
+		setPartView({ parts: partsList, partCategory: partView.partCategory });
+
+		//setPartView(partViewObject);
 	}
 
 	function changePartView(index) {
@@ -96,8 +98,20 @@ const PartSelector = (props) => {
 	}
 
 	function checkPartList(object) {
+		let i;
+
 		let newList = props.partLinks;
-		let theIndex = newList.indexOf(object);
+		let theIndex;
+
+		for (i = 0; i < newList.length; i++) {
+			if (newList[i].partCategory === object.partCategory) {
+				theIndex = i;
+				break;
+			}
+		}
+
+		console.log(object);
+		console.log(newList);
 		newList[theIndex].selected = true;
 		props.setPartLinks(newList);
 	}

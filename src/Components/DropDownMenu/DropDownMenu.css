@@ -54,5 +54,6 @@
 @media only screen and (max-width: 500px) {
 	.phi-drop-down-menu-container {
 		width: 120px;
+		font-size: 13px;
 	}
 }
