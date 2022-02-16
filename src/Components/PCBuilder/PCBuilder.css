@@ -5,6 +5,7 @@
 
 	display: grid;
 	grid-template-rows: 8vh 92vh;
+	overflow: hidden;
 }
 
 .main-nav-bar-container {
@@ -16,6 +17,34 @@
 
 .main-view-container {
 	position: relative;
+}
+
+.part-change-pop-up {
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	border-radius: 5px;
+	background-color: white;
+	color: #2ecc71;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	font-family: "Inter";
+	box-shadow: 0px 0px 2px 1px rgb(83, 83, 83);
+	bottom: -110%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: all 0.3s;
+	z-index: 10;
+}
+
+.part-change-pop-up div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 .main-nav-bar-wrapper {
@@ -197,5 +226,12 @@
 		font-family: "Inter";
 		font-weight: bold;
 		transition: 0.3s;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.part-change-pop-up {
+		height: 65px;
+		font-size: 23px;
 	}
 }

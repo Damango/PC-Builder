@@ -9,11 +9,6 @@ const PartModal = (props) => {
 		from: { top: 800 },
 		to: { top: 0 },
 	});
-	const cardModalAnimation = useSpring({
-		from: { opacity: 0 },
-		to: { opacity: 1 },
-		immediate: true,
-	});
 
 	let partModalRef = useRef(null);
 
@@ -32,6 +27,38 @@ const PartModal = (props) => {
 		props.checkPartList(props.partView);
 
 		console.log(props.partView);
+	}
+
+	function selectedButtonStyle() {
+		if (props.selectedParts.length > 0) {
+			let i;
+			for (i = 0; i < props.selectedParts.length; i++) {
+				if (props.selectedParts[i].item.name === props.data.name) {
+					return { backgroundColor: "#130f40" };
+				}
+			}
+		} else {
+			return { backgroundColor: "#1774ff" };
+		}
+	}
+
+	function selectedButtonTextStyle() {
+		if (props.selectedParts.length > 0) {
+			let i;
+			for (i = 0; i < props.selectedParts.length; i++) {
+				if (props.selectedParts[i].item.name === props.data.name) {
+					return (
+						<span>
+							SELECTED <i class="fa-solid fa-circle-check"></i>
+						</span>
+					);
+				} else {
+					return "SELECT +";
+				}
+			}
+		} else {
+			return "SELECT +";
+		}
 	}
 
 	console.log(props);
@@ -56,9 +83,14 @@ const PartModal = (props) => {
 					className="part-modal-image"
 					style={{ backgroundImage: `url(${props.data.imageURL})` }}
 				></div>
-				<button className="part-modal-select-button" onClick={addPartToList}>
-					Select +
+				<button
+					className="part-modal-select-button"
+					style={selectedButtonStyle()}
+					onClick={addPartToList}
+				>
+					{selectedButtonTextStyle()}
 				</button>
+
 				{props.data.highlights.map((highlight) => (
 					<div className="part-modal-highlight">
 						{" "}
@@ -85,7 +117,13 @@ const PartModal = (props) => {
 					className="part-modal-image"
 					style={{ backgroundImage: `url(${props.data.imageURL})` }}
 				></div>
-				<button className="part-modal-select-button">Select +</button>
+				<button
+					className="part-modal-select-button"
+					style={selectedButtonStyle()}
+					onClick={addPartToList}
+				>
+					{selectedButtonTextStyle()}
+				</button>
 			</div>
 
 			<div className="part-modal-right-side">

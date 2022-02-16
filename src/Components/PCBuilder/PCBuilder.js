@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./PCBuilder.css";
 import PartSelector from "../PartSelector/PartSelector";
 import CheckoutPage from "../CheckoutPage/CheckoutPage";
@@ -14,6 +14,14 @@ import cases from "../../data/cases";
 
 import { useState } from "react";
 const PCBuilder = () => {
+	useEffect(() => {
+		if (localStorage.getItem("pc-builder-data")) {
+			let storageData = JSON.parse(localStorage.getItem("pc-builder-data"));
+			setPartLinks(storageData.partLinks);
+			setSelectedParts(storageData.selectedParts);
+		}
+	}, []);
+
 	const [viewState, setViewState] = useState("part-selector");
 
 	const [partLinks, setPartLinks] = useState([
@@ -64,12 +72,39 @@ const PCBuilder = () => {
 
 	const [selectedParts, setSelectedParts] = useState([]);
 
-	function removeSelectedPart(index) {
+	function saveDataToLocal(selected, partlinks) {
+		setTimeout(() => {
+			let savedObject = {
+				selectedParts: selected,
+				partLinks: partlinks,
+			};
+
+			console.log(selectedParts);
+
+			localStorage.setItem("pc-builder-data", JSON.stringify(savedObject));
+		}, 100);
+	}
+
+	function removeSelectedPart(name) {
 		let newSelectedParts = [...selectedParts];
+		console.log(newSelectedParts);
+		let index = newSelectedParts
+			.map(function (e) {
+				console.log(e.item.name);
+				return e.item.name;
+			})
+			.indexOf(name);
+
+		console.log(name);
 		console.log(index);
+		console.log(newSelectedParts[index]);
 		newSelectedParts.splice(index, 1);
 
 		setSelectedParts(newSelectedParts);
+
+		console.log(selectedParts);
+
+		saveDataToLocal(newSelectedParts, partLinks);
 	}
 
 	function mobileNavBarStyles(page) {
@@ -144,6 +179,7 @@ const PCBuilder = () => {
 					setMobilePartNavBar={setMobilePartNavBar}
 					mobileNavBar={mobileNavBar}
 					setMobileNavBar={setMobileNavBar}
+					saveDataToLocal={saveDataToLocal}
 				/>
 			);
 		}
@@ -160,6 +196,7 @@ const PCBuilder = () => {
 					setMobilePartNavBar={setMobilePartNavBar}
 					mobileNavBar={mobileNavBar}
 					setMobileNavBar={setMobileNavBar}
+					saveDataToLocal={saveDataToLocal}
 				/>
 			);
 		} else if (viewState === "checkout-page") {
@@ -225,6 +262,7 @@ const PCBuilder = () => {
 					<div
 						className="mobile-nav-bar-parts-button"
 						onClick={() => {
+							setViewState("part-selector");
 							mobilePartNavBar
 								? setMobilePartNavBar(false)
 								: setMobilePartNavBar(true);
@@ -232,35 +270,42 @@ const PCBuilder = () => {
 					>
 						<i class="fas fa-microchip"></i>
 					</div>
-					<svg
-						className="logo"
-						id="logo-39"
-						width="35"
-						height="25"
-						viewBox="0 0 50 40"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
+					<span
+						onClick={() => {
+							setViewState("part-selector");
+						}}
 					>
-						{" "}
-						<path
-							d="M25.0001 0L50 15.0098V24.9863L25.0001 40L0 24.9863V15.0099L25.0001 0Z"
-							fill="#A5B4FC"
-							class="ccompli2"
-						></path>{" "}
-						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							d="M0 15.0098L25 0L50 15.0098V24.9863L25 40L0 24.9863V15.0098ZM25 33.631L44.6967 21.8022V18.1951L44.6957 18.1945L25 30.0197L5.30426 18.1945L5.3033 18.1951V21.8022L25 33.631ZM25 24.5046L40.1018 15.4376L36.4229 13.2298L25 20.0881L13.5771 13.2298L9.89822 15.4376L25 24.5046ZM25 14.573L31.829 10.4729L25 6.37467L18.171 10.4729L25 14.573Z"
-							fill="#4F46E5"
-							class="ccustom"
-						></path>{" "}
-						<path
-							d="M25.0001 0L0 15.0099V24.9863L25 40L25.0001 0Z"
-							fill="#A5B4FC"
-							class="ccompli2"
-							fill-opacity="0.3"
-						></path>{" "}
-					</svg>
+						<svg
+							className="logo"
+							id="logo-39"
+							width="35"
+							height="25"
+							viewBox="0 0 50 40"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							{" "}
+							<path
+								d="M25.0001 0L50 15.0098V24.9863L25.0001 40L0 24.9863V15.0099L25.0001 0Z"
+								fill="#A5B4FC"
+								class="ccompli2"
+							></path>{" "}
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M0 15.0098L25 0L50 15.0098V24.9863L25 40L0 24.9863V15.0098ZM25 33.631L44.6967 21.8022V18.1951L44.6957 18.1945L25 30.0197L5.30426 18.1945L5.3033 18.1951V21.8022L25 33.631ZM25 24.5046L40.1018 15.4376L36.4229 13.2298L25 20.0881L13.5771 13.2298L9.89822 15.4376L25 24.5046ZM25 14.573L31.829 10.4729L25 6.37467L18.171 10.4729L25 14.573Z"
+								fill="#4F46E5"
+								class="ccustom"
+							></path>{" "}
+							<path
+								d="M25.0001 0L0 15.0099V24.9863L25 40L25.0001 0Z"
+								fill="#A5B4FC"
+								class="ccompli2"
+								fill-opacity="0.3"
+							></path>{" "}
+						</svg>
+					</span>
+
 					<div
 						className="mobile-nav-bar-menu-button"
 						onClick={() => {
@@ -273,7 +318,12 @@ const PCBuilder = () => {
 				</div>
 			</div>
 
-			<div className="main-view-container">{renderViewState()}</div>
+			<div className="main-view-container">
+				{renderViewState()}
+				<div className="part-change-pop-up">
+					<div>PART ADDED</div>
+				</div>
+			</div>
 		</div>
 	);
 };

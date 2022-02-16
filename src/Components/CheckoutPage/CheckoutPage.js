@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import "./CheckoutPage.css";
+import CheckoutPagePart from "../CheckoutPagePart/CheckoutPagePart";
 
 const CheckoutPage = (props) => {
 	useEffect(() => {}, []);
@@ -82,7 +83,9 @@ const CheckoutPage = (props) => {
 								<button
 									className="checkout-page-remove-button"
 									onClick={() => {
-										props.removeSelectedPart(j - 1);
+										console.log(props.selectedParts);
+										console.log(j);
+										//props.removeSelectedPart(props.selectedParts[j].item.name);
 									}}
 								>
 									REMOVE
@@ -103,9 +106,9 @@ const CheckoutPage = (props) => {
 		if (mobileCheck) {
 			if (mobileSummary) {
 				setMobileSummary(false);
-				mobileSummaryElement.current.style.bottom = "-100%";
+				mobileSummaryElement.current.style.top = "100%";
 			} else if (mobileSummary === false) {
-				mobileSummaryElement.current.style.bottom = "0%";
+				mobileSummaryElement.current.style.top = "0%";
 				setMobileSummary(true);
 			}
 		}
@@ -119,7 +122,16 @@ const CheckoutPage = (props) => {
 				</div>
 
 				<div className="checkout-page-parts-list-wrapper">
-					{renderItemSections()}
+					{checkoutParts[0].map((part, index) => (
+						<CheckoutPagePart
+							selectedParts={props.selectedParts}
+							data={part}
+							index={index}
+							setViewState={props.setViewState}
+							partLinks={checkoutParts[0]}
+							removeSelectedPart={props.removeSelectedPart}
+						/>
+					))}
 				</div>
 			</div>
 			<div className="mobile-checkout-button" onClick={handleMobileCheckout}>

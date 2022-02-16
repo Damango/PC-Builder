@@ -29,7 +29,7 @@ const PartSelector = (props) => {
 		}
 
 		props.setPartLinks(thePartLinks);
-		handlePartSorting("Price");
+		handlePartSorting("Price: Low to High");
 		console.log(partView);
 	}, []);
 
@@ -39,22 +39,25 @@ const PartSelector = (props) => {
 	const [partModal, setPartModal] = useState(false);
 	const [mobilePartModal, setMobilePartModal] = useState(false);
 
-	const [sortSelection, setSortSelection] = useState("Price");
+	const [sortSelection, setSortSelection] = useState("Price: Low to High");
 
 	function handlePartSorting(selection) {
 		let partsList = [...partView.parts];
 
 		let partViewObject = partView;
 
-		if (selection === "Price") {
+		if (selection === "Price: Low to High") {
 			partsList.sort((a, b) => (a.price > b.price ? 1 : -1));
-			console.log("PRICE");
+		} else if (selection === "Price: High to Low") {
+			partsList.sort((a, b) => (a.price > b.price ? 1 : -1));
+			partsList.reverse();
 		} else if (selection === "Alphabetical") {
 			partsList.sort((a, b) => (a.name > b.name ? 1 : -1));
-			console.log("ALPHABET");
-		} else if (selection === "Rating") {
+		} else if (selection === "Rating: High to Low") {
 			partsList.sort((a, b) => (a.ratingCount > b.ratingCount ? 1 : -1));
-			console.log("RATING");
+			partsList.reverse();
+		} else if (selection === "Rating: Low to High") {
+			partsList.sort((a, b) => (a.ratingCount > b.ratingCount ? 1 : -1));
 		}
 
 		partViewObject.parts = partsList;
@@ -72,6 +75,17 @@ const PartSelector = (props) => {
 		setTimeout(() => {
 			setPartView(props.partLinks[index]);
 		}, 10);
+	}
+
+	function animatePopUp() {
+		let popUpElement = document.querySelector(".part-change-pop-up");
+		popUpElement.style.bottom = "30px";
+		popUpElement.style.opacity = 1;
+
+		setTimeout(() => {
+			popUpElement.style.bottom = "-110%";
+			popUpElement.style.opacity = 0;
+		}, 2000);
 	}
 
 	function listUpdater(editType, newItem) {
@@ -92,7 +106,8 @@ const PartSelector = (props) => {
 				partList.push(newObject);
 			}
 			props.setSelectedParts(partList);
-			console.log(props.selectedParts);
+			props.saveDataToLocal(partList, props.partLinks);
+			animatePopUp();
 		} else if (editType === "delete") {
 		}
 	}
@@ -125,6 +140,7 @@ const PartSelector = (props) => {
 					checkPartList={checkPartList}
 					listUpdater={listUpdater}
 					partView={partView}
+					selectedParts={props.selectedParts}
 				/>
 			);
 		}
@@ -209,7 +225,13 @@ const PartSelector = (props) => {
 						<span>Sort By</span>
 
 						<DropDownMenu
-							dropDownOptions={["Price", "Alphabetical", "Rating"]}
+							dropDownOptions={[
+								"Price: Low to High",
+								"Price: High to Low",
+								"Rating: Low to High",
+								"Rating: High to Low",
+								"Alphabetical",
+							]}
 							setSortSelection={setSortSelection}
 							handlePartSorting={handlePartSorting}
 						/>
