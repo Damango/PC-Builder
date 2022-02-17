@@ -16,6 +16,17 @@ const CheckoutPagePart = (props) => {
 		}
 	}
 
+	function removeSelectedPart() {
+		let thePartLinks = [...props.partLinks];
+		thePartLinks[props.index].selected = false;
+		console.log(selectedIndex);
+		console.log(thePartLinks);
+		props.removeSelectedPart(
+			props.selectedParts[selectedIndex].item.name,
+			thePartLinks
+		);
+	}
+
 	if (
 		props.selectedParts.filter(
 			(part) => part.item.type === props.data.partCategory
@@ -57,13 +68,7 @@ const CheckoutPagePart = (props) => {
 					</div>
 					<button
 						className="checkout-page-remove-button"
-						onClick={() => {
-							//	console.log(props.selectedParts[selectedIndex].item.name);
-							//	console.log(selectedIndex);
-							props.removeSelectedPart(
-								props.selectedParts[selectedIndex].item.name
-							);
-						}}
+						onClick={removeSelectedPart}
 					>
 						REMOVE
 					</button>

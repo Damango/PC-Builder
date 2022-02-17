@@ -79,30 +79,24 @@ const PCBuilder = () => {
 				partLinks: partlinks,
 			};
 
-			console.log(selectedParts);
+			console.log(savedObject);
 
 			localStorage.setItem("pc-builder-data", JSON.stringify(savedObject));
 		}, 100);
 	}
 
-	function removeSelectedPart(name) {
+	function removeSelectedPart(name, partLinks) {
 		let newSelectedParts = [...selectedParts];
-		console.log(newSelectedParts);
+
 		let index = newSelectedParts
 			.map(function (e) {
-				console.log(e.item.name);
 				return e.item.name;
 			})
 			.indexOf(name);
 
-		console.log(name);
-		console.log(index);
-		console.log(newSelectedParts[index]);
 		newSelectedParts.splice(index, 1);
 
 		setSelectedParts(newSelectedParts);
-
-		console.log(selectedParts);
 
 		saveDataToLocal(newSelectedParts, partLinks);
 	}

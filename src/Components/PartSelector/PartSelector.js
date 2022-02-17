@@ -128,6 +128,8 @@ const PartSelector = (props) => {
 		console.log(object);
 		console.log(newList);
 		newList[theIndex].selected = true;
+		console.log(newList);
+
 		props.setPartLinks(newList);
 	}
 
