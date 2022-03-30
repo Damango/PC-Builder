@@ -16,6 +16,7 @@ const PartSelector = (props) => {
 	const [mobilePartModal, setMobilePartModal] = useState(false);
 
 	const [sortSelection, setSortSelection] = useState("Price: Low to High");
+	const [clearPopUp, setClearPopUp] = useState(false);
 	useEffect(() => {
 		let thePartLinks = [...props.partLinks];
 		let i, j;
@@ -184,6 +185,8 @@ const PartSelector = (props) => {
 								partView={partView}
 								handlePartSorting={handlePartSorting}
 								setSortSelection={setSortSelection}
+								setMobilePartNavBar={props.setMobilePartNavBar}
+								mobile={true}
 							/>
 						))}
 						<div className="part-nav-footer">
@@ -196,14 +199,94 @@ const PartSelector = (props) => {
 								View Cart
 							</button>
 						</div>
+						<button
+							className="clear-pc-data-button"
+							onClick={handleClearDataPopUp}
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+								<path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+							</svg>
+							Clear PC Data
+						</button>
 					</div>
 				</div>
 			);
 		}
 	}
 
+	function clearData() {
+		let input = document.querySelector(".clear-data-input");
+		let partLinks = props.partLinks;
+		let i;
+		for (i = 0; i < partLinks.length; i++) {
+			partLinks[i].selected = false;
+		}
+		let clearedLinks = partLinks;
+
+		if (input.value === "YES I AM SURE") {
+			localStorage.setItem(
+				"pc-builder-data",
+				JSON.stringify({ partLinks: clearedLinks, selectedParts: [] })
+			);
+			props.setSelectedParts([]);
+			setClearPopUp(false);
+		}
+	}
+
+	function renderClearDataPopUp() {
+		if (clearPopUp) {
+			return (
+				<div className="clear-data-pop-up-container">
+					<button
+						style={{
+							position: "absolute",
+							top: "10px",
+							right: "10px",
+							color: "red",
+						}}
+						onClick={() => {
+							setClearPopUp(false);
+						}}
+					>
+						X
+					</button>
+					<div
+						style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}
+					>
+						ARE YOU SURE?
+					</div>
+					<div style={{ fontWeight: "bold", marginBottom: "10px" }}>
+						Type "YES I AM SURE" to clear your data
+					</div>
+					<div
+						style={{
+							fontSize: "12px",
+							marginTop: "10px",
+							marginBottom: "20px",
+						}}
+					>
+						THIS WILL ALSO CLEAR YOUR LOCALLY STORED DATA
+					</div>
+					<input className="clear-data-input" placeholder="" />
+					<button className="clear-data-pop-up-button" onClick={clearData}>
+						CLEAR DATA
+					</button>
+				</div>
+			);
+		}
+	}
+
+	function handleClearDataPopUp() {
+		if (clearPopUp) {
+			setClearPopUp(false);
+		} else {
+			setClearPopUp(true);
+		}
+	}
+
 	return (
 		<div className="part-selector-container">
+			{renderClearDataPopUp()}
 			{renderMobilePartNavBar()}
 			{renderPartModal()}
 
@@ -222,8 +305,18 @@ const PartSelector = (props) => {
 							handlePartSorting={handlePartSorting}
 							setSortSelection={setSortSelection}
 							sortSelection={sortSelection}
+							mobile={false}
 						/>
 					))}
+					<button
+						className="clear-pc-data-button"
+						onClick={handleClearDataPopUp}
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+						</svg>
+						Clear PC Data
+					</button>
 					<div className="part-nav-footer">
 						<button
 							className="view-cart-button center-x"

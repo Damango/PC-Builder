@@ -37,6 +37,21 @@
 	border-radius: 3px;
 	margin-bottom: 20px;
 	display: flex;
+	transition: all 0.3s;
+}
+
+.checkout-page-part-container:hover {
+	background-color: rgb(37, 37, 37);
+	color: white !important;
+	cursor: pointer;
+}
+
+.checkout-page-part-container:hover .checkout-page-part-name {
+	color: white;
+}
+
+.checkout-page-part-container:hover .checkout-page-part-price {
+	color: white;
 }
 
 .checkout-page-part-image-container {
@@ -94,6 +109,7 @@
 	font-weight: bold;
 	color: #2f3640;
 	font-size: 22px;
+	transition: all 0.3s;
 }
 
 .checkout-page-part-details-wrapper {
@@ -127,6 +143,7 @@
 	font-size: 22px;
 	color: #2f3640;
 	text-align: right;
+	transition: all 0.3s;
 }
 
 .checkout-page-remove-button {

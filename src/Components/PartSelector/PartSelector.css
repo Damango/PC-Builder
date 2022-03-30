@@ -129,6 +129,72 @@
 	grid-gap: 20px;
 }
 
+.clear-pc-data-button {
+	position: absolute;
+	top: -10%;
+	left: 0px;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px;
+	border-style: none;
+	color: white;
+	background-color: #e74c3c;
+	border: 2px solid white;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Inter";
+	border-radius: 5px;
+	margin-top: 10px;
+	transition: all 0.3s;
+}
+
+.clear-pc-data-button:hover {
+	cursor: pointer;
+	background-color: #b12313;
+}
+
+.clear-pc-data-button svg {
+	position: relative;
+	right: 12px;
+	width: 15px;
+	fill: white;
+}
+
+.clear-data-pop-up-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 30%;
+	box-shadow: 0px 0px 2px 2px black;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	text-align: center;
+	z-index: 10;
+}
+
+.clear-data-pop-up-container div {
+	font-size: 20px;
+}
+.clear-data-pop-up-container input {
+	padding: 10px;
+	font-family: "Inter";
+	text-align: center;
+}
+
+.clear-data-pop-up-button {
+	position: relative;
+	display: block;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20px;
+	background-color: red;
+	color: white;
+	padding: 10px;
+	font-size: 22px;
+}
+
 @media only screen and (max-width: 1820px) {
 	.parts-list-container {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -259,6 +325,19 @@
 	}
 	.part-list-category {
 		font-size: 25px;
+	}
+
+	.clear-data-pop-up-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		height: 35%;
+		box-shadow: 0px 0px 2px 2px black;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		text-align: center;
+		z-index: 12;
 	}
 }
 

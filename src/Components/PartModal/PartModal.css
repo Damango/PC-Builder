@@ -67,6 +67,8 @@
 	position: fixed;
 	background-color: white;
 	box-shadow: 0px 0px 1px 1px gray;
+	font-family: "Inter";
+	font-weight: bold;
 	color: red;
 	border-style: none;
 	border-radius: 50%;
@@ -251,6 +253,22 @@
 	}
 	.part-modal-right-side {
 		display: none;
+	}
+
+	.close-part-modal-button {
+		position: fixed;
+		background-color: white;
+		box-shadow: 0px 0px 1px 1px gray;
+		font-family: "Inter";
+		font-weight: bold;
+		color: red;
+		border-style: none;
+		border-radius: 50%;
+		right: 30px;
+		top: 10px;
+		padding: 0px 0px 0px 0px;
+
+		text-align: center;
 	}
 }
 

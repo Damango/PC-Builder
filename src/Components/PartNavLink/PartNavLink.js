@@ -9,6 +9,11 @@ const PartNavLink = (props) => {
 
 	function partViewHandler() {
 		props.changePartView(props.index);
+		setTimeout(() => {
+			if (props.mobile) {
+				props.setMobilePartNavBar(false);
+			}
+		}, 100);
 	}
 
 	function completeHandler() {

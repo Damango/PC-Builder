@@ -1,48 +1,15 @@
 import hyperx1 from "../media/hyperx1.png";
 import dominator from "../media/dominator.png";
 import corsairvengance from "../media/corsairvengance.png";
+import corsairvengancergb from "../media/vengeancergb.png";
+import lpxram from "../media/lpx.png";
 
 let memoryParts = [
 	{
-		name: "Hyper X Fury",
+		name: "HyperX Fury",
 		type: "memory",
 		imageURL: hyperx1,
-		price: 439.99,
-		rating: 5,
-		ratingCount: 300,
-		highlights: [
-			{
-				key: "Capacity",
-				value: "16 GB",
-			},
-			{
-				key: "Memory Type",
-				value: "DDR4",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "Corsair Dominator Platinum",
-		imageURL: dominator,
-		type: "memory",
-		price: 207.99,
+		price: 199.71,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
@@ -55,22 +22,41 @@ let memoryParts = [
 				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "12 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "3200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "HyperX" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "HyperX Fury" },
+		],
+	},
+	{
+		name: "Corsair Dominator Platinum",
+		imageURL: dominator,
+		type: "memory",
+		price: 369.99,
+		rating: 5,
+		ratingCount: 566,
+		highlights: [
+			{
+				key: "Capacity",
+				value: "32 GB",
+			},
+			{
+				key: "Memory Type",
+				value: "DDR5",
+			},
+			{
+				key: "RAM Speed",
+				value: "5600Mhz",
+			},
+		],
+		overView: [
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Dominator Platinum" },
 		],
 	},
 	{
@@ -79,140 +65,55 @@ let memoryParts = [
 		imageURL: corsairvengance,
 		price: 89.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1862,
 		highlights: [
 			{
 				key: "Capacity",
-				value: "16 GB",
+				value: "32 GB",
 			},
 			{
 				key: "Memory Type",
 				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "3200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "AMD" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "AMD Ryzen 9 3000 Series" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Vengenace" },
 		],
 	},
 	{
 		name: "Corsair Dominator",
 		type: "memory",
 		imageURL: dominator,
-		price: 133.94,
+		price: 180.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
 				key: "Capacity",
-				value: "16 GB",
+				value: "32 GB",
 			},
 			{
 				key: "Memory Type",
 				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "3200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Dominator" },
 		],
 	},
-	{
-		name: "AMD Ryzen 7 3700",
-		type: "memory",
-		imageURL: hyperx1,
-		price: 439.99,
-		rating: 5,
-		ratingCount: 300,
-		highlights: [
-			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "Corsair Dominator 2",
-		type: "memory",
-		imageURL: dominator,
-		price: 439.99,
-		rating: 5,
-		ratingCount: 300,
-		highlights: [
-			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
+
 	{
 		name: "HyperX Kingston",
 		type: "memory",
@@ -222,135 +123,103 @@ let memoryParts = [
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "16 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "3100Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Dominator" },
 		],
 	},
 	{
 		name: "Corsair Vengenace LPX",
 		type: "memory",
-		imageURL: dominator,
-		price: 439.99,
+		imageURL: lpxram,
+		price: 81.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 4133,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "16 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "3200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Vengenace LPX" },
 		],
 	},
 	{
 		name: "Corsair Vengenace PRO",
 		type: "memory",
 		imageURL: corsairvengance,
-		price: 439.99,
+		price: 329.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "64 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "4200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Vengenace PRO" },
 		],
 	},
 	{
 		name: "Corsair Vengenace RGB",
 		type: "memory",
-		imageURL: corsairvengance,
-		price: 439.99,
+		imageURL: corsairvengancergb,
+		price: 239.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "Capacity",
+				value: "32 GB",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Memory Type",
+				value: "DDR4",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Speed",
+				value: "4200Mhz",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+			{ key: "PIN Count", value: "288" },
+			{ key: "Series", value: "Corsair Vengenace RGB" },
 		],
 	},
 ];

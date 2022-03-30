@@ -13,7 +13,7 @@ const cases = [
 		imageURL: cmelite500,
 		price: 79.99,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 4507,
 		highlights: [
 			{
 				key: "Size",
@@ -38,7 +38,6 @@ const cases = [
 		],
 		overView: [
 			{ key: "Brand", value: "Cooler Master" },
-			{ key: "Processor Type", value: "Desktop" },
 			{ key: "Series", value: "Cooler Master Elite" },
 		],
 	},
@@ -84,7 +83,7 @@ const cases = [
 		imageURL: corsair4000d,
 		price: 104.99,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 603,
 		highlights: [
 			{
 				key: "Size",
@@ -123,7 +122,7 @@ const cases = [
 		highlights: [
 			{
 				key: "Size",
-				value: "Mid Tower",
+				value: "High Tower",
 			},
 			{
 				key: "I/O Panel",
@@ -144,7 +143,7 @@ const cases = [
 		],
 		overView: [
 			{ key: "Brand", value: "Corsair" },
-			{ key: "Processor Type", value: "Desktop" },
+
 			{ key: "Series", value: "D-SERIES" },
 		],
 	},
@@ -154,104 +153,104 @@ const cases = [
 		imageURL: corsairicue4000x,
 		price: 200.58,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 541,
 		highlights: [
 			{
 				key: "Size",
 				value: "Super Tower",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "I/O Panel",
+				value: "USB 3.1",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
+				key: "Weight",
+				value: "13.20 Pounds",
 			},
 			{
-				key: "L2 Cache",
-				value: "12MB",
+				key: "Dimensions",
+				value: "19.21 x 8.05 x 18.90 inches",
 			},
 			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Color",
+				value: "Black",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+
+			{ key: "Series", value: "ICUE-SERIES" },
 		],
 	},
 
 	{
 		name: "MSI Forge 100R",
 		type: "case",
-		imageURL: thermaltakew200,
-		price: 89.99,
-		rating: 5,
-		ratingCount: 202,
-		highlights: [
-			{
-				key: "Size",
-				value: "Super Tower",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "Thermaltake W200",
-		type: "case",
 		imageURL: msiforge100r,
 		price: 89.99,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 2021,
 		highlights: [
 			{
 				key: "Size",
 				value: "Mid Tower",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "I/O Panel",
+				value: "USB 3.1",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
+				key: "Weight",
+				value: "13.20 Pounds",
 			},
 			{
-				key: "L2 Cache",
-				value: "12MB",
+				key: "Dimensions",
+				value: "19.21 x 8.05 x 18.90 inches",
 			},
 			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Color",
+				value: "Black",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "MSI" },
+
+			{ key: "Series", value: "Forge Series" },
+		],
+	},
+	{
+		name: "Thermaltake W200",
+		type: "case",
+		imageURL: thermaltakew200,
+		price: 99.99,
+		rating: 5,
+		ratingCount: 989,
+		highlights: [
+			{
+				key: "Size",
+				value: "Mid Tower",
+			},
+			{
+				key: "I/O Panel",
+				value: "USB 3.1",
+			},
+			{
+				key: "Weight",
+				value: "13.20 Pounds",
+			},
+			{
+				key: "Dimensions",
+				value: "19.21 x 8.05 x 18.90 inches",
+			},
+			{
+				key: "Color",
+				value: "Black",
+			},
+		],
+		overView: [
+			{ key: "Brand", value: "Thermaltake" },
+
+			{ key: "Series", value: "Thermaltake W Series" },
 		],
 	},
 ];

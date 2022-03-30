@@ -60,11 +60,6 @@ const PCBuilder = () => {
 			parts: cases,
 			selected: false,
 		},
-		{
-			partCategory: "peripherals",
-			parts: graphicsCardParts,
-			selected: false,
-		},
 	]);
 
 	const [mobilePartNavBar, setMobilePartNavBar] = useState(false);
@@ -127,17 +122,24 @@ const PCBuilder = () => {
 								}
 								onClick={() => {
 									setViewState("part-selector");
+									setTimeout(() => {
+										setMobileNavBar(false);
+									}, 100);
 								}}
 							>
 								Part Selector
 							</div>
 							<div
-								className={"mobile-nav-link" + mobileNavBarStyles("community")}
+								className={
+									"mobile-nav-link-closed" + mobileNavBarStyles("community")
+								}
 							>
 								Community Builds
 							</div>
 							<div
-								className={"mobile-nav-link" + mobileNavBarStyles("completed")}
+								className={
+									"mobile-nav-link-closed" + mobileNavBarStyles("completed")
+								}
 							>
 								Finished Builds
 							</div>
@@ -147,6 +149,9 @@ const PCBuilder = () => {
 								}
 								onClick={() => {
 									setViewState("checkout-page");
+									setTimeout(() => {
+										setMobileNavBar(false);
+									}, 100);
 								}}
 							>
 								View Cart

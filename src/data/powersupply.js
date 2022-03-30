@@ -1,251 +1,172 @@
 import corsairrmx1000x from "../media/corsairrm1000x.png";
 import corsairrmx850x from "../media/corsairrm850x.png";
 import evga750 from "../media/evga750.png";
+import agkpowersupply from "../media/agkpowersupply.png";
+import thermaltakergb from "../media/thermaltakergb.png";
+import asusthor from "../media/asuspowersupply.png";
 
 const powerSupplies = [
 	{
-		name: "Corsair RMX 1000x",
+		name: "Corsair RM1000x",
 		type: "power supply",
 		imageURL: corsairrmx1000x,
 		price: 200.58,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 702,
 		highlights: [
 			{
-				key: "Size",
-				value: "Super Tower",
+				key: "Wattage",
+				value: "1000W",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "modularity",
+				value: "Fully Modular",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Form Factor",
+				value: "ATX",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+
+			{ key: "Series", value: "RM1000x" },
 		],
 	},
 	{
-		name: "Corsair RMX 850x",
+		name: "Corsair RM850x",
 		type: "power supply",
 		imageURL: corsairrmx850x,
-		price: 74.99,
+		price: 138.99,
 		rating: 5,
 		ratingCount: 202,
 		highlights: [
 			{
-				key: "Size",
-				value: "Super Tower",
+				key: "Wattage",
+				value: "850W",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "modularity",
+				value: "Not Modular",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Form Factor",
+				value: "ATX",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Corsair" },
+
+			{ key: "Series", value: "RM850x" },
 		],
 	},
 	{
-		name: "Cooler Master Elite 500",
+		name: "AGK 850",
 		type: "power supply",
-		imageURL: corsairrmx850x,
-		price: 200.58,
+		imageURL: agkpowersupply,
+		price: 79.99,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 132,
 		highlights: [
 			{
-				key: "Size",
-				value: "Super Tower",
+				key: "Wattage",
+				value: "850W",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "modularity",
+				value: "Fully Modular",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Form Factor",
+				value: "ATX",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "ARESGAME" },
+
+			{ key: "Series", value: "AGK Series" },
 		],
 	},
 	{
 		name: "EVGA 750",
 		type: "power supply",
 		imageURL: evga750,
-		price: 200.58,
+		price: 125.01,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 1679,
 		highlights: [
 			{
 				key: "Wattage",
 				value: "750W",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "modularity",
+				value: "Semi Modular",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Form Factor",
+				value: "ATX",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "EVGA" },
+
+			{ key: "Series", value: "EVGA 750W" },
+		],
+	},
+
+	{
+		name: "ASUS Rog Thor",
+		type: "power supply",
+		imageURL: asusthor,
+		price: 308.99,
+		rating: 5,
+		ratingCount: 109,
+		highlights: [
+			{
+				key: "Wattage",
+				value: "1200W",
+			},
+			{
+				key: "modularity",
+				value: "Fully Modular",
+			},
+			{
+				key: "Form Factor",
+				value: "ATX",
+			},
+		],
+		overView: [
+			{ key: "Brand", value: "ASUS" },
+
+			{ key: "Series", value: "ROG-THOR-1200P" },
 		],
 	},
 	{
-		name: "NZXT H510",
+		name: "Thermaltake Grand RGB",
 		type: "power supply",
-		imageURL: corsairrmx850x,
-		price: 89.99,
+		imageURL: thermaltakergb,
+		price: 144.99,
 		rating: 5,
-		ratingCount: 202,
+		ratingCount: 2664,
 		highlights: [
 			{
-				key: "Size",
-				value: "Super Tower",
+				key: "Wattage",
+				value: "850W",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "modularity",
+				value: "Fully Modular",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "Form Factor",
+				value: "ATX",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "MSI Forge 100R",
-		type: "power supply",
-		imageURL: corsairrmx850x,
-		price: 89.99,
-		rating: 5,
-		ratingCount: 202,
-		highlights: [
-			{
-				key: "Size",
-				value: "Super Tower",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "Thermaltake W200",
-		type: "power supply",
-		imageURL: corsairrmx850x,
-		price: 89.99,
-		rating: 5,
-		ratingCount: 202,
-		highlights: [
-			{
-				key: "Size",
-				value: "Mid Tower",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "Thermaltake" },
+
+			{ key: "Series", value: "Thermaltake Grand Series" },
 		],
 	},
 ];
