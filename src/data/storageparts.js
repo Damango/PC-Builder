@@ -1,6 +1,6 @@
-import samsung980 from "../media/samsung980.jpg";
-import samsung980pro from "../media/samsung980pro.jpg";
-import samsung870 from "../media/samsung870.jpg";
+import samsung980 from "../media/samsung980.png";
+import samsung980pro from "../media/samsung980pro.png";
+import samsung870 from "../media/samsung870.png";
 const storageParts = [
 	{
 		name: "SAMSUNG 980 M.2",
@@ -248,5 +248,7 @@ const storageParts = [
 		],
 	},
 ];
+
+storageParts.sort((a, b) => (a.price > b.price ? 1 : -1));
 
 export default storageParts;

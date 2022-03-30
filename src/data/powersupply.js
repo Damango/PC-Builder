@@ -1,6 +1,6 @@
-import corsairrmx1000x from "../media/corsairrm1000x.jpg";
-import corsairrmx850x from "../media/corsairrm850x.jpg";
-import evga750 from "../media/evga750.jpg";
+import corsairrmx1000x from "../media/corsairrm1000x.png";
+import corsairrmx850x from "../media/corsairrm850x.png";
+import evga750 from "../media/evga750.png";
 
 const powerSupplies = [
 	{
@@ -249,5 +249,7 @@ const powerSupplies = [
 		],
 	},
 ];
+
+powerSupplies.sort((a, b) => (a.price > b.price ? 1 : -1));
 
 export default powerSupplies;

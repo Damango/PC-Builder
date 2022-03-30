@@ -34,6 +34,7 @@ const PartModal = (props) => {
 			let i;
 			for (i = 0; i < props.selectedParts.length; i++) {
 				if (props.selectedParts[i].item.name === props.data.name) {
+					//alert("SELECTED");
 					return { backgroundColor: "#130f40" };
 				}
 			}
@@ -43,25 +44,24 @@ const PartModal = (props) => {
 	}
 
 	function selectedButtonTextStyle() {
+		let isSelected = false;
 		if (props.selectedParts.length > 0) {
 			let i;
 			for (i = 0; i < props.selectedParts.length; i++) {
 				if (props.selectedParts[i].item.name === props.data.name) {
-					return (
-						<span>
-							SELECTED <i class="fa-solid fa-circle-check"></i>
-						</span>
-					);
-				} else {
-					return "SELECT +";
+					//alert("OTHER TEST");
+					isSelected = true;
 				}
 			}
+		}
+
+		if (isSelected) {
+			return "SELECTED";
 		} else {
 			return "SELECT +";
 		}
 	}
 
-	console.log(props);
 	return (
 		<animated.div
 			className="part-modal-container"

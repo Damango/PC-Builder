@@ -17,15 +17,15 @@ let cpuParts = [
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "4.9 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "16 Cores",
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "24 Threads",
 			},
 			{
 				key: "L2 Cache",
@@ -43,20 +43,20 @@ let cpuParts = [
 		],
 	},
 	{
-		name: "Intel Core i7-9100K",
+		name: "Intel Core i9-9900KF",
 		imageURL: intelImage4,
 		type: "cpu",
-		price: 739.99,
+		price: 529.45,
 		rating: 5,
 		ratingCount: 1221,
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "5.0 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "6 Cores",
+				value: "8 Cores",
 			},
 			{
 				key: "Thread Count",
@@ -70,11 +70,16 @@ let cpuParts = [
 				key: "L3 Cache",
 				value: "25MB",
 			},
+			{
+				key: "Wattage",
+				value: "95W",
+			},
 		],
 		overView: [
 			{ key: "Brand", value: "Intel" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "300 Series" },
+			{ key: "Socket", value: "LGA 1151" },
 		],
 	},
 	{
@@ -87,7 +92,7 @@ let cpuParts = [
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "5.2 GHz",
+				value: "4.6 GHz",
 			},
 			{
 				key: "Core Count",
@@ -95,7 +100,7 @@ let cpuParts = [
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "24 Threads",
 			},
 			{
 				key: "L2 Cache",
@@ -110,23 +115,24 @@ let cpuParts = [
 			{ key: "Brand", value: "AMD" },
 			{ key: "Processor Type", value: "Desktop" },
 			{ key: "Series", value: "AMD Ryzen 9 3000 Series" },
+			{ key: "Socket", value: "AM4" },
 		],
 	},
 	{
-		name: "Intel Core i9-9300K",
+		name: "Intel Core i9-10900K",
 		type: "cpu",
 		imageURL: intelImage1,
-		price: 486.87,
+		price: 399.99,
 		rating: 5,
 		ratingCount: 128,
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "5.3 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "8 Cores",
 			},
 			{
 				key: "Thread Count",
@@ -144,11 +150,12 @@ let cpuParts = [
 		overView: [
 			{ key: "Brand", value: "Intel" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "Core i9 10th Gen" },
+			{ key: "Socket", value: "LGA1200" },
 		],
 	},
 	{
-		name: "AMD Ryzen 7 3700",
+		name: "AMD Ryzen 7 3700x",
 		type: "cpu",
 		imageURL: ryzen7,
 		price: 372.99,
@@ -157,15 +164,15 @@ let cpuParts = [
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "4.4 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "8 Cores",
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "16 Threads",
 			},
 			{
 				key: "L2 Cache",
@@ -173,34 +180,35 @@ let cpuParts = [
 			},
 			{
 				key: "L3 Cache",
-				value: "25MB",
+				value: "36MB",
 			},
 		],
 		overView: [
 			{ key: "Brand", value: "Intel" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "AMD Ryzen 7 3000 Series" },
+			{ key: "Socket", value: "AM4" },
 		],
 	},
 	{
-		name: "A",
+		name: "AMD Ryzen 7 5800x",
 		type: "cpu",
-		imageURL: intelImage2,
-		price: 482.9,
+		imageURL: ryzen7,
+		price: 449.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1147,
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "4.7 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "8 Cores",
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "16 Threads",
 			},
 			{
 				key: "L2 Cache",
@@ -208,13 +216,14 @@ let cpuParts = [
 			},
 			{
 				key: "L3 Cache",
-				value: "25MB",
+				value: "36MB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
+			{ key: "Brand", value: "AMD" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "AMD Ryzen 7 5000 Series" },
+			{ key: "Socket", value: "AM4" },
 		],
 	},
 	{
@@ -262,99 +271,99 @@ let cpuParts = [
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "5.2 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "16 Cores",
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "24 Threads",
 			},
 			{
 				key: "L2 Cache",
-				value: "12MB",
+				value: "24MB",
 			},
 			{
 				key: "L3 Cache",
-				value: "25MB",
+				value: "48MB",
 			},
 		],
 		overView: [
 			{ key: "Brand", value: "Intel" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "Core i9 9th Gen" },
 		],
 	},
 	{
-		name: "Intel Core i9-97500K",
+		name: "Intel Core i40-97500K",
 		type: "cpu",
 		imageURL: intelImage2,
-		price: 439.99,
+		price: 13439.99,
+		rating: 5,
+		ratingCount: 12000,
+		highlights: [
+			{
+				key: "Clock Speed",
+				value: "69.6 GHz",
+			},
+			{
+				key: "Core Count",
+				value: "128 Cores",
+			},
+			{
+				key: "Thread Count",
+				value: "200 Threads",
+			},
+			{
+				key: "L2 Cache",
+				value: "48GB",
+			},
+			{
+				key: "L3 Cache",
+				value: "128GB",
+			},
+		],
+		overView: [
+			{ key: "Brand", value: "Intel" },
+			{ key: "Processor Type", value: "Desktop" },
+			{ key: "Series", value: "Core i40 97th Gen" },
+		],
+	},
+	{
+		name: "Intel Core i9-15400K",
+		type: "cpu",
+		imageURL: intelImage2,
+		price: 1219.99,
 		rating: 5,
 		ratingCount: 300,
 		highlights: [
 			{
 				key: "Clock Speed",
-				value: "4.6 GHz",
+				value: "6.8 GHz",
 			},
 			{
 				key: "Core Count",
-				value: "12 Cores",
+				value: "24 Cores",
 			},
 			{
 				key: "Thread Count",
-				value: "20 Threads",
+				value: "48 Threads",
 			},
 			{
 				key: "L2 Cache",
-				value: "12MB",
+				value: "100MB",
 			},
 			{
 				key: "L3 Cache",
-				value: "25MB",
+				value: "250MB",
 			},
 		],
 		overView: [
 			{ key: "Brand", value: "Intel" },
 			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
-		],
-	},
-	{
-		name: "Intel Core i9-97400K",
-		type: "cpu",
-		imageURL: intelImage2,
-		price: 1209.99,
-		rating: 5,
-		ratingCount: 300,
-		highlights: [
-			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
-			},
-			{
-				key: "Core Count",
-				value: "12 Cores",
-			},
-			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
-			},
-		],
-		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Series", value: "Core i9 15th Gen" },
 		],
 	},
 ];

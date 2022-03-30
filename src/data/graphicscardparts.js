@@ -1,329 +1,258 @@
-import rtx3090 from "../media/rtx3090.jpg";
-import rtx3080 from "../media/rtx3080.jpg";
-import rtx3070 from "../media/rtx3070.jpg";
-import rtx3060 from "../media/rtx3060.jpg";
-import rtx3060ti from "../media/rtx3060ti.jpg";
-import rtx3070ti from "../media/rtx3070ti.jpg";
+import rtx3090 from "../media/rtx3090.png";
+import rtx3080 from "../media/rtx3080.png";
+import rtx3070 from "../media/rtx3070.png";
+import rtx3060 from "../media/rtx3060.png";
+import rtx3060ti from "../media/rtx3060ti.png";
+import rtx3070ti from "../media/rtx3070ti.png";
 
-import amdrx6800 from "../media/amdrx6800.jpg";
-import amdrx6900xt from "../media/amdrx6900xt.jpg";
+import amdrx6800 from "../media/amdrx6800.png";
+import amdrx6900xt from "../media/amdrx6900xt.png";
 
 let graphicsCardParts = [
 	{
 		name: "RTX 3090",
 		type: "graphics card",
 		imageURL: rtx3090,
-		price: 139.99,
+		price: 1899.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1781,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6X",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "24GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3090" },
 		],
 	},
 	{
 		name: "RTX 3080",
 		type: "graphics card",
 		imageURL: rtx3080,
-		price: 139.99,
+		price: 799.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1245,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6X",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "12GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3080" },
 		],
 	},
 	{
 		name: "RTX 3060",
 		type: "graphics card",
 		imageURL: rtx3060,
-		price: 799.99,
+		price: 569.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 4187,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "8GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3060" },
 		],
 	},
 	{
 		name: "RTX 3070",
 		imageURL: rtx3070,
 		type: "graphics card",
-		price: 139.99,
+		price: 999.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1305,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6X",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "8GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3070" },
 		],
 	},
 	{
-		name: "AMD RX 6900XT",
+		name: "AMD RX 6900",
 		imageURL: amdrx6900xt,
 		type: "graphics card",
-		price: 139.99,
+		price: 689.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 2119,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "16GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "AMD" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "AMD RX 6900" },
 		],
 	},
 	{
 		name: "AMD RX 6800",
 		imageURL: amdrx6800,
 		type: "graphics card",
-		price: 139.99,
+		price: 919.99,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 645,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "16GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "AMD" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "AMD RX 6800" },
 		],
 	},
 	{
 		name: "AMD RX 6900XT",
 		imageURL: amdrx6900xt,
-		price: 139.99,
+		price: 1449.05,
 		type: "graphics card",
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 182,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "16GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "AMD" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "AMD RX 6900XT" },
 		],
 	},
 	{
 		name: "RTX 3060ti",
 		imageURL: rtx3060ti,
 		type: "graphics card",
-		price: 861.81,
+		price: 738.24,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 1233,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "8GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3060ti" },
 		],
 	},
 	{
 		name: "RTX 3070ti",
 		imageURL: rtx3070ti,
 		type: "graphics card",
-		price: 139.99,
+		price: 898.98,
 		rating: 5,
-		ratingCount: 300,
+		ratingCount: 588,
 		highlights: [
 			{
-				key: "Clock Speed",
-				value: "4.6 GHz",
+				key: "GRAM",
+				value: "GDDR6X",
 			},
 			{
-				key: "Core Count",
-				value: "12 Cores",
+				key: "Display Type",
+				value: "HDMI",
 			},
 			{
-				key: "Thread Count",
-				value: "20 Threads",
-			},
-			{
-				key: "L2 Cache",
-				value: "12MB",
-			},
-			{
-				key: "L3 Cache",
-				value: "25MB",
+				key: "RAM Size",
+				value: "8GB",
 			},
 		],
 		overView: [
-			{ key: "Brand", value: "Intel" },
-			{ key: "Processor Type", value: "Desktop" },
-			{ key: "Series", value: "Core i7 12th Gen" },
+			{ key: "Brand", value: "NVIDIA" },
+			{ key: "Highest Resolution", value: "8K" },
+			{ key: "Series", value: "RTX 3070ti" },
 		],
 	},
 ];
+graphicsCardParts.sort((a, b) => (a.price > b.price ? 1 : -1));
 
 export default graphicsCardParts;

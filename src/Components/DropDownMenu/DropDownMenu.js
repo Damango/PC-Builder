@@ -4,9 +4,7 @@ import "./DropDownMenu.css";
 const DropDownMenu = (props) => {
 	const [dropDownState, setDropDownState] = useState(false);
 	const [dropDownOptions, setDropDownOptions] = useState(props.dropDownOptions);
-	const [currentSelection, setCurrentSelection] = useState(
-		props.dropDownOptions[0]
-	);
+	const [currentSelection, setCurrentSelection] = useState(props.sortSelection);
 
 	useEffect(() => {
 		let options = [...dropDownOptions];
@@ -36,7 +34,7 @@ const DropDownMenu = (props) => {
 		let options = [...dropDownOptions];
 
 		setCurrentSelection(options[index]);
-		//props.setSortSelection(options[index]);
+		props.setSortSelection(options[index]);
 		props.handlePartSorting(options[index]);
 		options.splice(index, 1);
 		options.push(previousSelection);

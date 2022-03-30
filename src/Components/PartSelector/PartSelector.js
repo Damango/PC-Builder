@@ -9,6 +9,13 @@ import DropDownMenu from "../DropDownMenu/DropDownMenu";
 import { render } from "@testing-library/react";
 
 const PartSelector = (props) => {
+	const [partView, setPartView] = useState(
+		props.partLinks[props.viewIndex ? props.viewIndex : 0]
+	);
+	const [partModal, setPartModal] = useState(false);
+	const [mobilePartModal, setMobilePartModal] = useState(false);
+
+	const [sortSelection, setSortSelection] = useState("Price: Low to High");
 	useEffect(() => {
 		let thePartLinks = [...props.partLinks];
 		let i, j;
@@ -33,16 +40,19 @@ const PartSelector = (props) => {
 		console.log(partView);
 	}, []);
 
-	const [partView, setPartView] = useState(
-		props.partLinks[props.viewIndex ? props.viewIndex : 0]
-	);
-	const [partModal, setPartModal] = useState(false);
-	const [mobilePartModal, setMobilePartModal] = useState(false);
+	function handlePartSorting(selection, parts, partListObject) {
+		let partsList;
+		let partCategory;
+		if (parts) {
+			partsList = parts;
+		} else {
+			partsList = [...partView.parts];
+		}
 
-	const [sortSelection, setSortSelection] = useState("Price: Low to High");
-
-	function handlePartSorting(selection) {
-		let partsList = [...partView.parts];
+		if (partListObject) {
+			partsList = partListObject.parts;
+			partCategory = partListObject.partCategory;
+		}
 
 		let partViewObject = partView;
 
@@ -62,19 +72,22 @@ const PartSelector = (props) => {
 
 		partViewObject.parts = partsList;
 
-		console.log(partView);
-		console.log(props.partLinks[0]);
-
-		setPartView({ parts: partsList, partCategory: partView.partCategory });
+		if (partListObject) {
+			setPartView({ parts: partsList, partCategory: partCategory });
+		} else {
+			setPartView({ parts: partsList, partCategory: partView.partCategory });
+		}
 
 		//setPartView(partViewObject);
 	}
 
 	function changePartView(index) {
 		setPartView({ parts: [], partCategory: "" });
+		console.log(props.partLinks[index]);
 		setTimeout(() => {
-			setPartView(props.partLinks[index]);
-		}, 10);
+			handlePartSorting(sortSelection, [], props.partLinks[index]);
+			//setPartView(props.partLinks[index]);
+		}, 1);
 	}
 
 	function animatePopUp() {
@@ -169,6 +182,8 @@ const PartSelector = (props) => {
 								partType={part.partCategory}
 								selectedParts={props.selectedParts}
 								partView={partView}
+								handlePartSorting={handlePartSorting}
+								setSortSelection={setSortSelection}
 							/>
 						))}
 						<div className="part-nav-footer">
@@ -204,6 +219,9 @@ const PartSelector = (props) => {
 							partType={part.partCategory}
 							selectedParts={props.selectedParts}
 							partView={partView}
+							handlePartSorting={handlePartSorting}
+							setSortSelection={setSortSelection}
+							sortSelection={sortSelection}
 						/>
 					))}
 					<div className="part-nav-footer">
@@ -235,6 +253,7 @@ const PartSelector = (props) => {
 								"Alphabetical",
 							]}
 							setSortSelection={setSortSelection}
+							sortSelection={sortSelection}
 							handlePartSorting={handlePartSorting}
 						/>
 					</div>

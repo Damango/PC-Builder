@@ -33,6 +33,25 @@ const PartCard = (props) => {
 		return selected;
 	}
 
+	function selectedButtonTextStyle() {
+		let isSelected = false;
+		if (props.selectedParts.length > 0) {
+			let i;
+			for (i = 0; i < props.selectedParts.length; i++) {
+				if (props.selectedParts[i].item.name === props.data.name) {
+					//alert("OTHER TEST");
+					isSelected = true;
+				}
+			}
+		}
+
+		if (isSelected) {
+			return "SELECTED";
+		} else {
+			return "SELECT +";
+		}
+	}
+
 	function openPartModal() {
 		props.setPartModal(null);
 		setTimeout(() => {
@@ -84,7 +103,7 @@ const PartCard = (props) => {
 				}}
 				className={renderSelectionStyle() + "select-button center-x"}
 			>
-				Select +
+				{selectedButtonTextStyle()}
 			</button>
 		</animated.div>
 	);

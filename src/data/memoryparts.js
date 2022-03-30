@@ -355,4 +355,5 @@ let memoryParts = [
 	},
 ];
 
+memoryParts.sort((a, b) => (a.price > b.price ? 1 : -1));
 export default memoryParts;
